@@ -53,10 +53,28 @@
     <Compile Include="GUI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Vehiculo\VehiculoNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Vehiculo\VehiculoNewEdit.Designer.cs">
+      <DependentUpon>VehiculoNewEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Vehiculo\VehiculoGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Vehiculo\VehiculoGui.Designer.cs">
+      <DependentUpon>VehiculoGui.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vehiculo\VehiculoNewEdit.resx">
+      <DependentUpon>VehiculoNewEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vehiculo\VehiculoGui.resx">
+      <DependentUpon>VehiculoGui.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -79,6 +98,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\Cliente\" />
+    <Folder Include="GUI\Empleado\" />
+    <Folder Include="GUI\Guia\" />
+    <Folder Include="GUI\Sucursal\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

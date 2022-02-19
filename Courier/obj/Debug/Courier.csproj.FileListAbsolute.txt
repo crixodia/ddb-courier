@@ -8,3 +8,5 @@ D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.csproj.GenerateRes
 D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.csproj.CoreCompileInputs.cache
 D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.exe
 D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.pdb
+D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.VehiculoGui.resources
+D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.Vehiculo.VehiculoNewEdit.resources
