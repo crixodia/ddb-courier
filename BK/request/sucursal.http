@@ -1,0 +1,32 @@
+@api = http://localhost:5000/sucursal
+
+GET {{api}}
+###
+
+POST {{api}}
+Content-Type: application/json
+
+{
+    "provincia": "IMBABURA",
+    "ciudad": "IBARRA",
+    "direccion": "Grl. Juan B. Justo"
+}
+
+###
+
+GET {{api}}/5
+
+
+###
+
+DELETE {{api}}/4
+
+###
+PUT {{api}}/5
+Content-Type: application/json
+
+{
+    "provincia": "IMBABURA",
+    "ciudad": "IBARRA",
+    "direccion": "CALLE 5"
+}

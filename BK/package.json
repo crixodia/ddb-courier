@@ -1,0 +1,38 @@
+{
+  "name": "courier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "dev": "nodemon --exec npm start",
+    "build": "babel src -d dist",
+    "start-build": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crixodia/DistributedDatabaseCourier.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crixodia/DistributedDatabaseCourier/issues"
+  },
+  "homepage": "https://github.com/crixodia/DistributedDatabaseCourier#readme",
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0",
+    "mssql": "^8.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.4",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "nodemon": "^2.0.15"
+  }
+}
