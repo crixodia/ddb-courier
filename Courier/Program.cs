@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Courier.GUI.Vehiculo;
 
 namespace Courier
 {
@@ -16,7 +17,7 @@ namespace Courier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI.Vehiculo.VehiculoNewEdit());
+            Application.Run(new VehiculoGui());
         }
     }
 }

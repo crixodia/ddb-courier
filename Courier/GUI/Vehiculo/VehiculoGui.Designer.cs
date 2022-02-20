@@ -1,5 +1,5 @@
 ﻿
-namespace Courier.GUI
+namespace Courier.GUI.Vehiculo
 {
     partial class VehiculoGui
     {

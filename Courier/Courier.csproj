@@ -53,28 +53,28 @@
     <Compile Include="GUI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Vehiculo\VehiculoNewEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Vehiculo\VehiculoNewEdit.Designer.cs">
-      <DependentUpon>VehiculoNewEdit.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Vehiculo\VehiculoGui.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Vehiculo\VehiculoGui.Designer.cs">
       <DependentUpon>VehiculoGui.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Vehiculo\VehiculoNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Vehiculo\VehiculoNewEdit.Designer.cs">
+      <DependentUpon>VehiculoNewEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Vehiculo\VehiculoNewEdit.resx">
-      <DependentUpon>VehiculoNewEdit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Vehiculo\VehiculoGui.resx">
       <DependentUpon>VehiculoGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vehiculo\VehiculoNewEdit.resx">
+      <DependentUpon>VehiculoNewEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
