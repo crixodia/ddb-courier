@@ -47,11 +47,59 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Driver\Sucursal.cs" />
+    <Compile Include="GUI\Cliente\ClienteGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteGui.Designer.cs">
+      <DependentUpon>ClienteGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteNewEdit.Designer.cs">
+      <DependentUpon>ClienteNewEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Empleado\EmpleadoGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Empleado\EmpleadoGui.Designer.cs">
+      <DependentUpon>EmpleadoGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Empleado\EmpleadoNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Empleado\EmpleadoNewEdit.Designer.cs">
+      <DependentUpon>EmpleadoNewEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guia\GuiaGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Guia\GuiaGui.Designer.cs">
+      <DependentUpon>GuiaGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Guia\GuiaNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Guia\GuiaNewEdit.Designer.cs">
+      <DependentUpon>GuiaNewEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sucursal\SucursalGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Sucursal\SucursalGui.Designer.cs">
+      <DependentUpon>SucursalGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sucursal\SucursalNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Sucursal\SucursalNewEdit.Designer.cs">
+      <DependentUpon>SucursalNewEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Vehiculo\VehiculoGui.cs">
       <SubType>Form</SubType>
@@ -67,8 +115,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Cliente\ClienteGui.resx">
+      <DependentUpon>ClienteGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cliente\ClienteNewEdit.resx">
+      <DependentUpon>ClienteNewEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Empleado\EmpleadoGui.resx">
+      <DependentUpon>EmpleadoGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Empleado\EmpleadoNewEdit.resx">
+      <DependentUpon>EmpleadoNewEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Guia\GuiaGui.resx">
+      <DependentUpon>GuiaGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Guia\GuiaNewEdit.resx">
+      <DependentUpon>GuiaNewEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sucursal\SucursalGui.resx">
+      <DependentUpon>SucursalGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sucursal\SucursalNewEdit.resx">
+      <DependentUpon>SucursalNewEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Vehiculo\VehiculoGui.resx">
       <DependentUpon>VehiculoGui.cs</DependentUpon>
@@ -114,11 +186,6 @@
   <ItemGroup>
     <None Include="Resources\filter16.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\Cliente\" />
-    <Folder Include="GUI\Empleado\" />
-    <Folder Include="GUI\Guia\" />
-    <Folder Include="GUI\Sucursal\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
