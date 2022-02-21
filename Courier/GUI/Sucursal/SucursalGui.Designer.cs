@@ -73,6 +73,7 @@ namespace Courier.GUI.Sucursal
             this.tsbNew.Name = "tsbNew";
             this.tsbNew.Size = new System.Drawing.Size(62, 22);
             this.tsbNew.Text = "Nuevo";
+            this.tsbNew.Click += new System.EventHandler(this.tsbNew_Click);
             // 
             // panel1
             // 
@@ -104,6 +105,7 @@ namespace Courier.GUI.Sucursal
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "SucursalGui";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SucrusalGui";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

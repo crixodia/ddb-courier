@@ -39,10 +39,11 @@ namespace Courier.GUI.Guia
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbNew = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ts = new System.Windows.Forms.ToolStrip();
+            this.tsDateTo = new System.Windows.Forms.ToolStripTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.ts.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -76,13 +77,14 @@ namespace Courier.GUI.Guia
             this.tscOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tscOptions.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.tscOptions.Items.AddRange(new object[] {
-            "Empleado (CI)",
-            "Capacidad",
-            "Placa",
-            "Tipo"});
+            "Cliente (CI)",
+            "Fecha",
+            "Provincia",
+            "Ciudad"});
             this.tscOptions.Name = "tscOptions";
             this.tscOptions.Size = new System.Drawing.Size(121, 25);
             this.tscOptions.ToolTipText = "Elija un criterio de búsqueda";
+            this.tscOptions.SelectedIndexChanged += new System.EventHandler(this.TscOptions_SelectedIndexChanged);
             // 
             // toolStripButton1
             // 
@@ -131,10 +133,10 @@ namespace Courier.GUI.Guia
             this.panel1.Size = new System.Drawing.Size(800, 425);
             this.panel1.TabIndex = 4;
             // 
-            // toolStrip1
+            // ts
             // 
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ts.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.ts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNew,
             this.tsbEdit,
             this.tsbDelete,
@@ -142,12 +144,20 @@ namespace Courier.GUI.Guia
             this.toolStripButton1,
             this.tscOptions,
             this.tscCriteria,
+            this.tsDateTo,
             this.tscOk});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "ts";
+            this.ts.Location = new System.Drawing.Point(0, 0);
+            this.ts.Name = "ts";
+            this.ts.Size = new System.Drawing.Size(800, 25);
+            this.ts.TabIndex = 3;
+            this.ts.Text = "ts";
+            // 
+            // tsDateTo
+            // 
+            this.tsDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tsDateTo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tsDateTo.Name = "tsDateTo";
+            this.tsDateTo.Size = new System.Drawing.Size(100, 25);
             // 
             // GuiaGui
             // 
@@ -155,13 +165,14 @@ namespace Courier.GUI.Guia
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.ts);
             this.Name = "GuiaGui";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuiaGui";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.ts.ResumeLayout(false);
+            this.ts.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,6 +190,7 @@ namespace Courier.GUI.Guia
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbNew;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip ts;
+        private System.Windows.Forms.ToolStripTextBox tsDateTo;
     }
 }

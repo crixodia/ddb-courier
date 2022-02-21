@@ -163,8 +163,10 @@ namespace Courier.GUI.Empleado
             // 
             // EmpleadoNewEdit
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(259, 248);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnCancel);
@@ -180,7 +182,10 @@ namespace Courier.GUI.Empleado
             this.Controls.Add(this.txtModel);
             this.Controls.Add(this.txtPlaca);
             this.Controls.Add(this.txtCi);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "EmpleadoNewEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmpleadoNewEdit";
             this.ResumeLayout(false);
             this.PerformLayout();

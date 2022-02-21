@@ -10,3 +10,11 @@ D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.exe
 D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.pdb
 D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.csproj.AssemblyReference.cache
 D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.Vehiculo.VehiculoGui.resources
+D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.Cliente.ClienteGui.resources
+D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.Cliente.ClienteNewEdit.resources
+D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.Empleado.EmpleadoGui.resources
+D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.Empleado.EmpleadoNewEdit.resources
+D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.Guia.GuiaGui.resources
+D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.Guia.GuiaNewEdit.resources
+D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.Sucursal.SucursalGui.resources
+D:\Repositories\DistributedDatabase\Courier\obj\Debug\Courier.GUI.Sucursal.SucursalNewEdit.resources

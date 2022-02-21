@@ -184,8 +184,10 @@ namespace Courier.GUI.Guia
             // 
             // GuiaNewEdit
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(259, 316);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label8);
@@ -203,7 +205,10 @@ namespace Courier.GUI.Guia
             this.Controls.Add(this.txtPlaca);
             this.Controls.Add(this.cmbSuc);
             this.Controls.Add(this.txtCi);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "GuiaNewEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuiaNewEdit";
             this.ResumeLayout(false);
             this.PerformLayout();

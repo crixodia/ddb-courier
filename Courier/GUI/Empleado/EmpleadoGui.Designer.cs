@@ -32,10 +32,10 @@ namespace Courier.GUI.Empleado
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmpleadoGui));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tscOk = new System.Windows.Forms.ToolStripButton();
-            this.tscCA = new System.Windows.Forms.ToolStripButton();
-            this.tscCP = new System.Windows.Forms.ToolStripButton();
-            this.tscCL = new System.Windows.Forms.ToolStripButton();
-            this.tscML = new System.Windows.Forms.ToolStripButton();
+            this.tscS = new System.Windows.Forms.ToolStripButton();
+            this.tscA = new System.Windows.Forms.ToolStripButton();
+            this.tscC = new System.Windows.Forms.ToolStripButton();
+            this.tscB = new System.Windows.Forms.ToolStripButton();
             this.tscCriteria = new System.Windows.Forms.ToolStripTextBox();
             this.tscOptions = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -69,46 +69,46 @@ namespace Courier.GUI.Empleado
             this.tscOk.Size = new System.Drawing.Size(23, 22);
             this.tscOk.Text = "toolStripButton6";
             // 
-            // tscCA
+            // tscS
             // 
-            this.tscCA.CheckOnClick = true;
-            this.tscCA.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tscCA.Image = ((System.Drawing.Image)(resources.GetObject("tscCA.Image")));
-            this.tscCA.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tscCA.Name = "tscCA";
-            this.tscCA.Size = new System.Drawing.Size(23, 22);
-            this.tscCA.Text = "S";
+            this.tscS.CheckOnClick = true;
+            this.tscS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tscS.Image = ((System.Drawing.Image)(resources.GetObject("tscS.Image")));
+            this.tscS.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tscS.Name = "tscS";
+            this.tscS.Size = new System.Drawing.Size(23, 22);
+            this.tscS.Text = "S";
             // 
-            // tscCP
+            // tscA
             // 
-            this.tscCP.CheckOnClick = true;
-            this.tscCP.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tscCP.Image = ((System.Drawing.Image)(resources.GetObject("tscCP.Image")));
-            this.tscCP.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tscCP.Name = "tscCP";
-            this.tscCP.Size = new System.Drawing.Size(23, 22);
-            this.tscCP.Text = "A";
+            this.tscA.CheckOnClick = true;
+            this.tscA.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tscA.Image = ((System.Drawing.Image)(resources.GetObject("tscA.Image")));
+            this.tscA.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tscA.Name = "tscA";
+            this.tscA.Size = new System.Drawing.Size(23, 22);
+            this.tscA.Text = "A";
             // 
-            // tscCL
+            // tscC
             // 
-            this.tscCL.CheckOnClick = true;
-            this.tscCL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tscCL.Image = ((System.Drawing.Image)(resources.GetObject("tscCL.Image")));
-            this.tscCL.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tscCL.Name = "tscCL";
-            this.tscCL.Size = new System.Drawing.Size(23, 22);
-            this.tscCL.Text = "C";
+            this.tscC.CheckOnClick = true;
+            this.tscC.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tscC.Image = ((System.Drawing.Image)(resources.GetObject("tscC.Image")));
+            this.tscC.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tscC.Name = "tscC";
+            this.tscC.Size = new System.Drawing.Size(23, 22);
+            this.tscC.Text = "C";
             // 
-            // tscML
+            // tscB
             // 
-            this.tscML.CheckOnClick = true;
-            this.tscML.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tscML.Image = ((System.Drawing.Image)(resources.GetObject("tscML.Image")));
-            this.tscML.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tscML.Name = "tscML";
-            this.tscML.Size = new System.Drawing.Size(23, 22);
-            this.tscML.Text = "B";
-            this.tscML.ToolTipText = "B";
+            this.tscB.CheckOnClick = true;
+            this.tscB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tscB.Image = ((System.Drawing.Image)(resources.GetObject("tscB.Image")));
+            this.tscB.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tscB.Name = "tscB";
+            this.tscB.Size = new System.Drawing.Size(23, 22);
+            this.tscB.Text = "B";
+            this.tscB.ToolTipText = "B";
             // 
             // tscCriteria
             // 
@@ -123,12 +123,13 @@ namespace Courier.GUI.Empleado
             this.tscOptions.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.tscOptions.Items.AddRange(new object[] {
             "Empleado (CI)",
-            "Capacidad",
-            "Placa",
-            "Tipo"});
+            "Provincia",
+            "Ciudad",
+            "Rol"});
             this.tscOptions.Name = "tscOptions";
             this.tscOptions.Size = new System.Drawing.Size(121, 25);
             this.tscOptions.ToolTipText = "Elija un criterio de búsqueda";
+            this.tscOptions.SelectedIndexChanged += new System.EventHandler(this.TscOptions_SelectedIndexChanged);
             // 
             // toolStripButton1
             // 
@@ -188,10 +189,10 @@ namespace Courier.GUI.Empleado
             this.toolStripButton1,
             this.tscOptions,
             this.tscCriteria,
-            this.tscML,
-            this.tscCL,
-            this.tscCP,
-            this.tscCA,
+            this.tscB,
+            this.tscC,
+            this.tscA,
+            this.tscS,
             this.tscOk});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -207,6 +208,7 @@ namespace Courier.GUI.Empleado
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "EmpleadoGui";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleado";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -221,10 +223,10 @@ namespace Courier.GUI.Empleado
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripButton tscOk;
-        private System.Windows.Forms.ToolStripButton tscCA;
-        private System.Windows.Forms.ToolStripButton tscCP;
-        private System.Windows.Forms.ToolStripButton tscCL;
-        private System.Windows.Forms.ToolStripButton tscML;
+        private System.Windows.Forms.ToolStripButton tscS;
+        private System.Windows.Forms.ToolStripButton tscA;
+        private System.Windows.Forms.ToolStripButton tscC;
+        private System.Windows.Forms.ToolStripButton tscB;
         private System.Windows.Forms.ToolStripTextBox tscCriteria;
         private System.Windows.Forms.ToolStripComboBox tscOptions;
         private System.Windows.Forms.ToolStripButton toolStripButton1;

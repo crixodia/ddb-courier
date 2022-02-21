@@ -15,7 +15,6 @@ namespace Courier.GUI.Vehiculo
         public VehiculoGui()
         {
             InitializeComponent();
-
             tscOptions.SelectedIndex = 0;
         }
 

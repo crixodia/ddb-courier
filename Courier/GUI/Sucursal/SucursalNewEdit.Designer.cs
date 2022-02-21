@@ -109,8 +109,10 @@ namespace Courier.GUI.Sucursal
             // 
             // SucursalNewEdit
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(259, 166);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -120,7 +122,10 @@ namespace Courier.GUI.Sucursal
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCap);
             this.Controls.Add(this.txtYear);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SucursalNewEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SucursalNewEdit";
             this.ResumeLayout(false);
             this.PerformLayout();

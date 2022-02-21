@@ -76,10 +76,10 @@ namespace Courier.GUI.Cliente
             this.tscOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tscOptions.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.tscOptions.Items.AddRange(new object[] {
-            "Empleado (CI)",
-            "Capacidad",
-            "Placa",
-            "Tipo"});
+            "Cliente (CI)",
+            "Provincia",
+            "Ciudad",
+            "ZIP"});
             this.tscOptions.Name = "tscOptions";
             this.tscOptions.Size = new System.Drawing.Size(121, 25);
             this.tscOptions.ToolTipText = "Elija un criterio de búsqueda";

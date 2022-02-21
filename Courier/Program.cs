@@ -4,6 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Courier.GUI.Vehiculo;
+using Courier.GUI.Cliente;
+using Courier.GUI.Empleado;
+using Courier.GUI.Guia;
+using Courier.GUI.Sucursal;
 
 namespace Courier
 {
@@ -17,7 +21,7 @@ namespace Courier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VehiculoGui());
+            Application.Run(new EmpleadoGui());
         }
     }
 }

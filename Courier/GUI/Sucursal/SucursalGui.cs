@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Courier.GUI.Sucursal;
 
 namespace Courier.GUI.Sucursal
 {
@@ -15,6 +16,12 @@ namespace Courier.GUI.Sucursal
         public SucursalGui()
         {
             InitializeComponent();
+        }
+
+        private void tsbNew_Click(object sender, EventArgs e)
+        {
+            var sne = new SucursalNewEdit();
+            sne.ShowDialog();
         }
     }
 }

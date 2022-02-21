@@ -15,6 +15,7 @@ namespace Courier.GUI.Cliente
         public ClienteGui()
         {
             InitializeComponent();
+            tscOptions.SelectedIndex = 0;
         }
     }
 }
