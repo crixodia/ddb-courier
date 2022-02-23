@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Driver\Connection.cs" />
     <Compile Include="Driver\Sucursal.cs" />
     <Compile Include="GUI\Cliente\ClienteGui.cs">
       <SubType>Form</SubType>

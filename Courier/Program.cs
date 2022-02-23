@@ -21,7 +21,7 @@ namespace Courier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmpleadoGui());
+            Application.Run(new SucursalGui());
         }
     }
 }
