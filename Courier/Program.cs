@@ -8,6 +8,7 @@ using Courier.GUI.Cliente;
 using Courier.GUI.Empleado;
 using Courier.GUI.Guia;
 using Courier.GUI.Sucursal;
+using Courier.Driver;
 
 namespace Courier
 {
@@ -19,6 +20,13 @@ namespace Courier
         [STAThread]
         static void Main()
         {
+            Driver.Connection.ConnectionConfig(
+                "localhost", 
+                "sa", 
+                "P@ssw0rd", 
+                "tramaco_quito"
+            );
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SucursalGui());

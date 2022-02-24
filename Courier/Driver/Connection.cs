@@ -10,13 +10,13 @@ namespace Courier.Driver
 {
     class Connection
     {
-        private string DataSource { get; set; }
-        private string User { get; set; }
-        private string Password { get; set; }
-        private string InitialCatalog { get; set; }
+        private static string DataSource { get; set; }
+        private static string User { get; set; }
+        private static string Password { get; set; }
+        private static string InitialCatalog { get; set; }
 
-        public SqlConnection SqlCon;
-        public Connection(string datSource, string user, string password, string initialCatalog)
+        public static SqlConnection SqlCon;
+        public static void ConnectionConfig(string datSource, string user, string password, string initialCatalog)
         {
             DataSource = datSource;
             User = user;
@@ -25,7 +25,7 @@ namespace Courier.Driver
             ConnectTo();
         }
 
-        private void ConnectTo()
+        private static void ConnectTo()
         {
             string ConString = String.Format(
                 "Data Source ={0};Initial Catalog={1};user id={2};password={3};Persist Security Info=true",
@@ -35,10 +35,10 @@ namespace Courier.Driver
                 Password
             );
 
-            SqlCon = new SqlConnection(ConString);            
+            SqlCon = new SqlConnection(ConString);
         }
 
-        public DataTable Query(string queryString)
+        public static DataTable Query(string queryString)
         {
             SqlCommand cmd = new SqlCommand(queryString, SqlCon);
             DataTable dt = new DataTable();
@@ -49,7 +49,23 @@ namespace Courier.Driver
             return dt;
         }
 
-        public void Close()
+        public static int CrudNonReader(string queryString)
+        {
+            SqlCommand cmd = new SqlCommand(queryString, SqlCon);
+            SqlCon.Open();
+
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return -1;
+        }
+
+        public static void Close()
         {
             SqlCon.Close();
         }

@@ -52,9 +52,11 @@ namespace Courier.GUI.Sucursal
             this.dgv.Location = new System.Drawing.Point(0, 0);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(800, 425);
             this.dgv.TabIndex = 2;
+            this.dgv.SelectionChanged += new System.EventHandler(this.Dgv_SelectionChanged);
             // 
             // tsbDelete
             // 
@@ -99,6 +101,7 @@ namespace Courier.GUI.Sucursal
             this.tsbDelete});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "ts";

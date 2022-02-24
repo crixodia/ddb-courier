@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Driver\Cliente.cs" />
     <Compile Include="Driver\Connection.cs" />
+    <Compile Include="Driver\Empleado.cs" />
+    <Compile Include="Driver\Guia.cs" />
     <Compile Include="Driver\Sucursal.cs" />
+    <Compile Include="Driver\Vehiculo.cs" />
     <Compile Include="GUI\Cliente\ClienteGui.cs">
       <SubType>Form</SubType>
     </Compile>

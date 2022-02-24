@@ -17,16 +17,29 @@ namespace Courier.GUI.Sucursal
         public SucursalGui()
         {
             InitializeComponent();
-            Connection cn = new Connection("localhost", "sa", "P@ssw0rd", "tramaco_quito");
-            
-            dgv.DataSource = cn.Query("SELECT * FROM SUCURSAL");
-            cn.Close();
+            dgv.DataSource = Driver.Sucursal.GetAll();
+            Connection.Close();
         }
 
         private void TsbNew_Click(object sender, EventArgs e)
         {
             var sne = new SucursalNewEdit();
             sne.ShowDialog();
+        }
+
+        private void Dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (DataGridViewRow row in dgv.SelectedRows)
+                {
+                    Console.WriteLine(row.Cells[0].Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
