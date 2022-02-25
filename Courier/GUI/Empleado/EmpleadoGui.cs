@@ -15,6 +15,8 @@ namespace Courier.GUI.Empleado
         public EmpleadoGui()
         {
             InitializeComponent();
+            Icon = Properties.Resources.courier;
+
             tscOptions.SelectedIndex = 0;
         }
 

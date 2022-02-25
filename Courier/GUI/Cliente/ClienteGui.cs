@@ -15,6 +15,8 @@ namespace Courier.GUI.Cliente
         public ClienteGui()
         {
             InitializeComponent();
+            Icon = Properties.Resources.cliente;
+
             tscOptions.SelectedIndex = 0;
         }
     }

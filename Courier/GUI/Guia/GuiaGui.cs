@@ -15,6 +15,8 @@ namespace Courier.GUI.Guia
         public GuiaGui()
         {
             InitializeComponent();
+            Icon = Properties.Resources.guide;
+
             tscOptions.SelectedIndex = 0;
         }
 

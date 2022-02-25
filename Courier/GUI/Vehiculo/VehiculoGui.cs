@@ -15,6 +15,8 @@ namespace Courier.GUI.Vehiculo
         public VehiculoGui()
         {
             InitializeComponent();
+            Icon = Properties.Resources.vehiculo;
+
             tscOptions.SelectedIndex = 0;
         }
 

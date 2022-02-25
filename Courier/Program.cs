@@ -29,7 +29,7 @@ namespace Courier
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SucursalGui());
+            Application.Run(new Main("tramaco_quito en " + "localhost"));
         }
     }
 }

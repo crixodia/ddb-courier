@@ -14,9 +14,11 @@ namespace Courier
     {
         private int childFormNumber = 0;
 
-        public Main()
+        public Main(string dbName)
         {
             InitializeComponent();
+            Icon = Properties.Resources.database;
+            StatusLabel.Text = "Conectado a " + dbName;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -102,6 +104,38 @@ namespace Courier
             {
                 childForm.Close();
             }
+        }
+
+        private void BtnSucursal_Click(object sender, EventArgs e)
+        {
+            NewForm(new GUI.Sucursal.SucursalGui());
+        }
+
+        private void BtnVehiculo_Click(object sender, EventArgs e)
+        {
+            NewForm(new GUI.Vehiculo.VehiculoGui());
+        }
+
+        private void BtnEmpleado_Click(object sender, EventArgs e)
+        {
+            NewForm(new GUI.Empleado.EmpleadoGui());
+        }
+
+        private void BtnCliente_Click(object sender, EventArgs e)
+        {
+            NewForm(new GUI.Cliente.ClienteGui());
+        }
+
+        private void BtnGuia_Click(object sender, EventArgs e)
+        {
+            NewForm(new GUI.Guia.GuiaGui());
+        }
+
+
+        private void NewForm(Form form)
+        {
+            form.MdiParent = this;
+            form.Show();
         }
     }
 }

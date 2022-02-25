@@ -17,6 +17,8 @@ namespace Courier.GUI.Sucursal
         public SucursalGui()
         {
             InitializeComponent();
+            Icon = Properties.Resources.home;
+
             dgv.DataSource = Driver.Sucursal.GetAll();
             Connection.Close();
         }
