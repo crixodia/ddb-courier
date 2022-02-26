@@ -29,23 +29,23 @@ namespace Courier.GUI.Sucursal
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCap = new System.Windows.Forms.TextBox();
-            this.txtYear = new System.Windows.Forms.TextBox();
+            this.txtCiudad = new System.Windows.Forms.TextBox();
+            this.txtProvincia = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox2
+            // txtDireccion
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 61);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 58);
-            this.textBox2.TabIndex = 40;
+            this.txtDireccion.Location = new System.Drawing.Point(67, 61);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(180, 58);
+            this.txtDireccion.TabIndex = 40;
             // 
             // label5
             // 
@@ -74,19 +74,19 @@ namespace Courier.GUI.Sucursal
             this.label4.TabIndex = 37;
             this.label4.Text = "Dirección";
             // 
-            // txtCap
+            // txtCiudad
             // 
-            this.txtCap.Location = new System.Drawing.Point(67, 35);
-            this.txtCap.Name = "txtCap";
-            this.txtCap.Size = new System.Drawing.Size(180, 20);
-            this.txtCap.TabIndex = 36;
+            this.txtCiudad.Location = new System.Drawing.Point(67, 35);
+            this.txtCiudad.Name = "txtCiudad";
+            this.txtCiudad.Size = new System.Drawing.Size(180, 20);
+            this.txtCiudad.TabIndex = 36;
             // 
-            // txtYear
+            // txtProvincia
             // 
-            this.txtYear.Location = new System.Drawing.Point(67, 9);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(180, 20);
-            this.txtYear.TabIndex = 35;
+            this.txtProvincia.Location = new System.Drawing.Point(67, 9);
+            this.txtProvincia.Name = "txtProvincia";
+            this.txtProvincia.Size = new System.Drawing.Size(180, 20);
+            this.txtProvincia.TabIndex = 35;
             // 
             // btnCancel
             // 
@@ -97,6 +97,7 @@ namespace Courier.GUI.Sucursal
             this.btnCancel.TabIndex = 42;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnOk
             // 
@@ -106,6 +107,7 @@ namespace Courier.GUI.Sucursal
             this.btnOk.TabIndex = 41;
             this.btnOk.Text = "Añadir";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.BtnOk_Click);
             // 
             // SucursalNewEdit
             // 
@@ -116,16 +118,16 @@ namespace Courier.GUI.Sucursal
             this.ClientSize = new System.Drawing.Size(259, 166);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtCap);
-            this.Controls.Add(this.txtYear);
+            this.Controls.Add(this.txtCiudad);
+            this.Controls.Add(this.txtProvincia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SucursalNewEdit";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SucursalNewEdit";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,12 +136,12 @@ namespace Courier.GUI.Sucursal
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCap;
-        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.TextBox txtCiudad;
+        private System.Windows.Forms.TextBox txtProvincia;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
     }

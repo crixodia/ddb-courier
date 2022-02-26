@@ -45,7 +45,7 @@ namespace Courier.GUI.Sucursal
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AllowUserToResizeRows = false;
-            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -54,9 +54,9 @@ namespace Courier.GUI.Sucursal
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(800, 425);
+            this.dgv.Size = new System.Drawing.Size(587, 285);
             this.dgv.TabIndex = 2;
-            this.dgv.SelectionChanged += new System.EventHandler(this.Dgv_SelectionChanged);
+            this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_CellDoubleClick);
             // 
             // tsbDelete
             // 
@@ -65,6 +65,7 @@ namespace Courier.GUI.Sucursal
             this.tsbDelete.Name = "tsbDelete";
             this.tsbDelete.Size = new System.Drawing.Size(70, 22);
             this.tsbDelete.Text = "Eliminar";
+            this.tsbDelete.Click += new System.EventHandler(this.TsbDelete_Click);
             // 
             // tsbEdit
             // 
@@ -73,6 +74,7 @@ namespace Courier.GUI.Sucursal
             this.tsbEdit.Name = "tsbEdit";
             this.tsbEdit.Size = new System.Drawing.Size(57, 22);
             this.tsbEdit.Text = "Editar";
+            this.tsbEdit.Click += new System.EventHandler(this.TsbEdit_Click);
             // 
             // tsbNew
             // 
@@ -89,7 +91,7 @@ namespace Courier.GUI.Sucursal
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 425);
+            this.panel1.Size = new System.Drawing.Size(587, 285);
             this.panel1.TabIndex = 4;
             // 
             // toolStrip1
@@ -102,7 +104,7 @@ namespace Courier.GUI.Sucursal
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(587, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "ts";
             // 
@@ -110,12 +112,12 @@ namespace Courier.GUI.Sucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(587, 310);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "SucursalGui";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SucrusalGui";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Sucursales";
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.panel1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);

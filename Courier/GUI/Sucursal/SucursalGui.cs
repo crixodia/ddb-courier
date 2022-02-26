@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Courier.GUI.Sucursal;
 using Courier.Driver;
 
 namespace Courier.GUI.Sucursal
@@ -20,28 +19,98 @@ namespace Courier.GUI.Sucursal
             Icon = Properties.Resources.home;
 
             dgv.DataSource = Driver.Sucursal.GetAll();
-            Connection.Close();
         }
 
         private void TsbNew_Click(object sender, EventArgs e)
         {
-            var sne = new SucursalNewEdit();
-            sne.ShowDialog();
+            var sne = new SucursalNewEdit
+            {
+                Text = "Nueva sucursal"
+            };
+
+            sne.ShowDialog(this);
+
+            dgv.DataSource = Driver.Sucursal.GetAll();
         }
 
-        private void Dgv_SelectionChanged(object sender, EventArgs e)
+        private void TsbEdit_Click(object sender, EventArgs e)
         {
             try
             {
-                foreach (DataGridViewRow row in dgv.SelectedRows)
+                var dgvr = dgv.SelectedRows;
+                if (dgvr.Count == 1)
                 {
-                    Console.WriteLine(row.Cells[0].Value);
+                    DataGridViewCellCollection row = dgvr[0].Cells;
+                    var sne = new SucursalNewEdit(
+                        new Driver.Sucursal(
+                            row[1].Value.ToString(),
+                            row[2].Value.ToString(),
+                            row[3].Value.ToString(),
+                            int.Parse(row[0].Value.ToString())
+                        )
+                    )
+                    {
+                        Text = "Actualizar sucursal"
+                    };
+
+                    sne.ShowDialog(this);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "No es posible editar varios elementos",
+                        "Sucursal",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Stop
+                    );
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
+            dgv.DataSource = Driver.Sucursal.GetAll();
+        }
+
+
+        private void TsbDelete_Click(object sender, EventArgs e)
+        {
+            var dgvr = dgv.SelectedRows;
+            DialogResult dr = MessageBox.Show(
+                String.Format(
+                    "¿Está seguro de eliminar " + (dgvr.Count == 1 ? "esta sucursal?" : "{0} sucursales?"),
+                    dgvr.Count
+                ),
+                "Sucursal",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (dr == DialogResult.Yes)
+            {
+                try
+                {
+                    foreach (DataGridViewRow row in dgvr)
+                    {
+                        DataGridViewCellCollection cell = row.Cells;
+
+                        Driver.Sucursal.DeleteByCodigo(int.Parse(cell[0].Value.ToString()));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            dgv.DataSource = Driver.Sucursal.GetAll();
+        }
+
+
+        private void Dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TsbEdit_Click(sender, e);
         }
     }
 }

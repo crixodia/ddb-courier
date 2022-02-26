@@ -23,9 +23,11 @@ namespace Courier
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
+            Form childForm = new Form
+            {
+                MdiParent = this,
+                Text = "Window " + childFormNumber++
+            };
             childForm.Show();
         }
 
@@ -36,7 +38,7 @@ namespace Courier
             openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
-                string FileName = openFileDialog.FileName;
+                _ = openFileDialog.FileName;
             }
         }
 
@@ -47,7 +49,7 @@ namespace Courier
             saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
             {
-                string FileName = saveFileDialog.FileName;
+                _ = saveFileDialog.FileName;
             }
         }
 
