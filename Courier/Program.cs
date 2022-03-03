@@ -21,15 +21,15 @@ namespace Courier
         static void Main()
         {
             Driver.Connection.ConnectionConfig(
-                "localhost", 
-                "sa", 
-                "P@ssw0rd", 
-                "tramaco_quito"
+                "localhost",
+                "sa",
+                "P@ssw0rd",
+                "tramaco"
             );
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main("tramaco_quito en " + "localhost"));
+            Application.Run(new Main("tramaco en " + "localhost"));
         }
     }
 }

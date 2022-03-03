@@ -60,6 +60,7 @@ namespace Courier.GUI.Sucursal
             // 
             // tsbDelete
             // 
+            this.tsbDelete.Enabled = false;
             this.tsbDelete.Image = global::Courier.Properties.Resources.delete16;
             this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDelete.Name = "tsbDelete";
@@ -78,6 +79,7 @@ namespace Courier.GUI.Sucursal
             // 
             // tsbNew
             // 
+            this.tsbNew.Enabled = false;
             this.tsbNew.Image = global::Courier.Properties.Resources.new16;
             this.tsbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNew.Name = "tsbNew";

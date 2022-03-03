@@ -58,7 +58,7 @@ namespace Courier.GUI.Sucursal
                 else
                 {
                     MessageBox.Show(
-                        "No es posible editar varios elementos",
+                        "No es posible editar varios o ningún elemento",
                         "Sucursal",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Stop
@@ -77,11 +77,12 @@ namespace Courier.GUI.Sucursal
         private void TsbDelete_Click(object sender, EventArgs e)
         {
             var dgvr = dgv.SelectedRows;
+            string message = dgvr.Count == 0
+                ? "No ha seleccionado ninguna sucursal"
+                : "¿Está seguro de eliminar " + (dgvr.Count == 1 ? "esta sucursal?" : "{0} sucursales?");
+
             DialogResult dr = MessageBox.Show(
-                String.Format(
-                    "¿Está seguro de eliminar " + (dgvr.Count == 1 ? "esta sucursal?" : "{0} sucursales?"),
-                    dgvr.Count
-                ),
+                message,
                 "Sucursal",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning

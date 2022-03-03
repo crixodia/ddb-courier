@@ -10,6 +10,7 @@ namespace Courier.Driver
     {
         private string Codigo { get; set; }
         private int Sucursal { get; set; }
+        private string Nombre { get; set; }
         private string Cedula { get; set; }
         private string Provincia { get; set; }
         private string Ciudad { get; set; }

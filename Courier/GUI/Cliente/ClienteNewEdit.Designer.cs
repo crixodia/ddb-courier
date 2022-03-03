@@ -43,12 +43,14 @@ namespace Courier.GUI.Cliente
             this.txtPlaca = new System.Windows.Forms.TextBox();
             this.txtCi = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(172, 215);
+            this.btnCancel.Location = new System.Drawing.Point(172, 241);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 31;
@@ -57,7 +59,7 @@ namespace Courier.GUI.Cliente
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(91, 215);
+            this.btnOk.Location = new System.Drawing.Point(91, 241);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 30;
@@ -67,7 +69,7 @@ namespace Courier.GUI.Cliente
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(40, 181);
+            this.label7.Location = new System.Drawing.Point(40, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(24, 13);
             this.label7.TabIndex = 29;
@@ -76,7 +78,7 @@ namespace Courier.GUI.Cliente
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 155);
+            this.label5.Location = new System.Drawing.Point(15, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 28;
@@ -85,7 +87,7 @@ namespace Courier.GUI.Cliente
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 92);
+            this.label6.Location = new System.Drawing.Point(12, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 27;
@@ -94,7 +96,7 @@ namespace Courier.GUI.Cliente
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 66);
+            this.label4.Location = new System.Drawing.Point(24, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 26;
@@ -103,7 +105,7 @@ namespace Courier.GUI.Cliente
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 40);
+            this.label3.Location = new System.Drawing.Point(13, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 25;
@@ -120,14 +122,14 @@ namespace Courier.GUI.Cliente
             // 
             // txtCap
             // 
-            this.txtCap.Location = new System.Drawing.Point(70, 152);
+            this.txtCap.Location = new System.Drawing.Point(70, 178);
             this.txtCap.Name = "txtCap";
             this.txtCap.Size = new System.Drawing.Size(176, 20);
             this.txtCap.TabIndex = 21;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(70, 89);
+            this.txtYear.Location = new System.Drawing.Point(70, 115);
             this.txtYear.Multiline = true;
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(176, 57);
@@ -135,14 +137,14 @@ namespace Courier.GUI.Cliente
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(70, 63);
+            this.txtModel.Location = new System.Drawing.Point(70, 89);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(176, 20);
             this.txtModel.TabIndex = 19;
             // 
             // txtPlaca
             // 
-            this.txtPlaca.Location = new System.Drawing.Point(70, 37);
+            this.txtPlaca.Location = new System.Drawing.Point(70, 63);
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(176, 20);
             this.txtPlaca.TabIndex = 18;
@@ -156,10 +158,26 @@ namespace Courier.GUI.Cliente
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 178);
+            this.textBox1.Location = new System.Drawing.Point(70, 204);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(176, 20);
             this.textBox1.TabIndex = 32;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Nombre";
+            // 
+            // TxtNombre
+            // 
+            this.TxtNombre.Location = new System.Drawing.Point(70, 37);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(176, 20);
+            this.TxtNombre.TabIndex = 33;
             // 
             // ClienteNewEdit
             // 
@@ -167,7 +185,9 @@ namespace Courier.GUI.Cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(259, 249);
+            this.ClientSize = new System.Drawing.Size(259, 272);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -208,5 +228,7 @@ namespace Courier.GUI.Cliente
         private System.Windows.Forms.TextBox txtPlaca;
         private System.Windows.Forms.TextBox txtCi;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtNombre;
     }
 }

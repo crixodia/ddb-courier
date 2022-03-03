@@ -36,7 +36,7 @@ namespace Courier.Driver
         {
             int result = Connection.CrudNonReader(
                 String.Format(
-                    "INSERT INTO SUCURSAL VALUES('{0}','{1}','{2}')",
+                    "INSERT INTO SUCURSALV VALUES('{0}','{1}','{2}')",
                     Provincia,
                     Ciudad,
                     Direccion
@@ -47,14 +47,14 @@ namespace Courier.Driver
         }
 
         /// <summary>
-        /// Elimina una sucursal en base a su codigo
+        /// Actualiza una sucursal en base a su codigo
         /// </summary>
         /// <returns>Número de filas actualizadas</returns>
         public int Update()
         {
             int result = Connection.CrudNonReader(
                 String.Format(
-                    "UPDATE SUCURSAL " +
+                    "UPDATE SUCURSALV " +
                     "SET PROVINCIA_SUCURSAL='{0}', CIUDAD_SUCURSAL='{1}', DIRECCION_SUCURSAL='{2}' " +
                     "WHERE CODIGO_SUCURSAL='{3}'",
                     Provincia,
@@ -76,7 +76,7 @@ namespace Courier.Driver
         /// </returns>
         public static DataTable GetAll()
         {
-            DataTable dt = Connection.Query("SELECT * FROM SUCURSAL");
+            DataTable dt = Connection.Query("SELECT * FROM SUCURSALV");
             Connection.Close();
             return dt;
         }
@@ -90,7 +90,7 @@ namespace Courier.Driver
         {
             int result = Connection.CrudNonReader(
                 String.Format(
-                    "DELETE FROM SUCURSAL WHERE CODIGO_SUCURSAL={0}",
+                    "DELETE FROM SUCURSALV WHERE CODIGO_SUCURSAL={0}",
                     codigo
                 )
             );
