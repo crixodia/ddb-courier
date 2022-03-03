@@ -60,6 +60,7 @@ namespace Courier.GUI.Empleado
 
             if (codigo == "")
             {
+                sc.Codigo = TxtCodigo.Text;
                 sc.Insert();
             }
             else

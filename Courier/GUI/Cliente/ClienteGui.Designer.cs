@@ -29,102 +29,115 @@ namespace Courier.GUI.Cliente
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tscOk = new System.Windows.Forms.ToolStripButton();
-            this.tscCriteria = new System.Windows.Forms.ToolStripTextBox();
-            this.tscOptions = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.Dgv = new System.Windows.Forms.DataGridView();
+            this.TscOk = new System.Windows.Forms.ToolStripButton();
+            this.TscCriteria = new System.Windows.Forms.ToolStripTextBox();
+            this.TscOptions = new System.Windows.Forms.ToolStripComboBox();
+            this.TbsRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbDelete = new System.Windows.Forms.ToolStripButton();
-            this.tsbEdit = new System.Windows.Forms.ToolStripButton();
-            this.tsbNew = new System.Windows.Forms.ToolStripButton();
+            this.TsbDelete = new System.Windows.Forms.ToolStripButton();
+            this.TsbEdit = new System.Windows.Forms.ToolStripButton();
+            this.TsbNew = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv)).BeginInit();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // Dgv
             // 
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 425);
-            this.dataGridView1.TabIndex = 2;
+            this.Dgv.AllowUserToAddRows = false;
+            this.Dgv.AllowUserToDeleteRows = false;
+            this.Dgv.AllowUserToResizeRows = false;
+            this.Dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Dgv.Location = new System.Drawing.Point(0, 0);
+            this.Dgv.Name = "Dgv";
+            this.Dgv.ReadOnly = true;
+            this.Dgv.RowHeadersVisible = false;
+            this.Dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Dgv.Size = new System.Drawing.Size(800, 425);
+            this.Dgv.TabIndex = 2;
+            this.Dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_CellDoubleClick);
             // 
-            // tscOk
+            // TscOk
             // 
-            this.tscOk.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tscOk.Image = global::Courier.Properties.Resources.search16;
-            this.tscOk.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tscOk.Name = "tscOk";
-            this.tscOk.Size = new System.Drawing.Size(23, 22);
-            this.tscOk.Text = "toolStripButton6";
+            this.TscOk.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TscOk.Image = global::Courier.Properties.Resources.search16;
+            this.TscOk.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TscOk.Name = "TscOk";
+            this.TscOk.Size = new System.Drawing.Size(23, 22);
+            this.TscOk.Text = "toolStripButton6";
+            this.TscOk.Click += new System.EventHandler(this.TscOk_Click);
             // 
-            // tscCriteria
+            // TscCriteria
             // 
-            this.tscCriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tscCriteria.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tscCriteria.Name = "tscCriteria";
-            this.tscCriteria.Size = new System.Drawing.Size(200, 25);
+            this.TscCriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TscCriteria.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TscCriteria.Name = "TscCriteria";
+            this.TscCriteria.Size = new System.Drawing.Size(200, 25);
             // 
-            // tscOptions
+            // TscOptions
             // 
-            this.tscOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tscOptions.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.tscOptions.Items.AddRange(new object[] {
-            "Cliente (CI)",
+            this.TscOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TscOptions.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.TscOptions.Items.AddRange(new object[] {
+            "Cédula Cliente",
             "Provincia",
             "Ciudad",
             "ZIP"});
-            this.tscOptions.Name = "tscOptions";
-            this.tscOptions.Size = new System.Drawing.Size(121, 25);
-            this.tscOptions.ToolTipText = "Elija un criterio de búsqueda";
+            this.TscOptions.Name = "TscOptions";
+            this.TscOptions.Size = new System.Drawing.Size(121, 25);
+            this.TscOptions.ToolTipText = "Elija un criterio de búsqueda";
             // 
-            // toolStripButton1
+            // TbsRefresh
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Courier.Properties.Resources.filter16;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "tscAll";
+            this.TbsRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TbsRefresh.Image = global::Courier.Properties.Resources.filter16;
+            this.TbsRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TbsRefresh.Name = "TbsRefresh";
+            this.TbsRefresh.Size = new System.Drawing.Size(23, 22);
+            this.TbsRefresh.Text = "tscAll";
+            this.TbsRefresh.Click += new System.EventHandler(this.TbsRefresh_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // tsbDelete
+            // TsbDelete
             // 
-            this.tsbDelete.Image = global::Courier.Properties.Resources.delete16;
-            this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDelete.Name = "tsbDelete";
-            this.tsbDelete.Size = new System.Drawing.Size(70, 22);
-            this.tsbDelete.Text = "Eliminar";
+            this.TsbDelete.Image = global::Courier.Properties.Resources.delete16;
+            this.TsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TsbDelete.Name = "TsbDelete";
+            this.TsbDelete.Size = new System.Drawing.Size(70, 22);
+            this.TsbDelete.Text = "Eliminar";
+            this.TsbDelete.Click += new System.EventHandler(this.TsbDelete_Click);
             // 
-            // tsbEdit
+            // TsbEdit
             // 
-            this.tsbEdit.Image = global::Courier.Properties.Resources.edit16;
-            this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEdit.Name = "tsbEdit";
-            this.tsbEdit.Size = new System.Drawing.Size(57, 22);
-            this.tsbEdit.Text = "Editar";
+            this.TsbEdit.Image = global::Courier.Properties.Resources.edit16;
+            this.TsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TsbEdit.Name = "TsbEdit";
+            this.TsbEdit.Size = new System.Drawing.Size(57, 22);
+            this.TsbEdit.Text = "Editar";
+            this.TsbEdit.Click += new System.EventHandler(this.TsbEdit_Click);
             // 
-            // tsbNew
+            // TsbNew
             // 
-            this.tsbNew.Image = global::Courier.Properties.Resources.new16;
-            this.tsbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNew.Name = "tsbNew";
-            this.tsbNew.Size = new System.Drawing.Size(62, 22);
-            this.tsbNew.Text = "Nuevo";
+            this.TsbNew.Image = global::Courier.Properties.Resources.new16;
+            this.TsbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TsbNew.Name = "TsbNew";
+            this.TsbNew.Size = new System.Drawing.Size(62, 22);
+            this.TsbNew.Text = "Nuevo";
+            this.TsbNew.Click += new System.EventHandler(this.TsbNew_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.Dgv);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
@@ -135,14 +148,14 @@ namespace Courier.GUI.Cliente
             // 
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbNew,
-            this.tsbEdit,
-            this.tsbDelete,
+            this.TsbNew,
+            this.TsbEdit,
+            this.TsbDelete,
             this.toolStripSeparator1,
-            this.toolStripButton1,
-            this.tscOptions,
-            this.tscCriteria,
-            this.tscOk});
+            this.TbsRefresh,
+            this.TscOptions,
+            this.TscCriteria,
+            this.TscOk});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -157,8 +170,8 @@ namespace Courier.GUI.Cliente
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "ClienteGui";
-            this.Text = "ClienteGui";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Cliente";
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv)).EndInit();
             this.panel1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -169,15 +182,15 @@ namespace Courier.GUI.Cliente
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripButton tscOk;
-        private System.Windows.Forms.ToolStripTextBox tscCriteria;
-        private System.Windows.Forms.ToolStripComboBox tscOptions;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.DataGridView Dgv;
+        private System.Windows.Forms.ToolStripButton TscOk;
+        private System.Windows.Forms.ToolStripTextBox TscCriteria;
+        private System.Windows.Forms.ToolStripComboBox TscOptions;
+        private System.Windows.Forms.ToolStripButton TbsRefresh;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton tsbDelete;
-        private System.Windows.Forms.ToolStripButton tsbEdit;
-        private System.Windows.Forms.ToolStripButton tsbNew;
+        private System.Windows.Forms.ToolStripButton TsbDelete;
+        private System.Windows.Forms.ToolStripButton TsbEdit;
+        private System.Windows.Forms.ToolStripButton TsbNew;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStrip toolStrip1;
     }

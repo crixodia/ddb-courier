@@ -97,7 +97,7 @@ namespace Courier.Driver
         {
             int result = Connection.CrudNonReader(
                 String.Format(
-                    "set xact_abort on;DELETE FROM EMPLEADOV WHERE CODIGO_EMPLEADO={0};", codigoEmpleado
+                    "set xact_abort on;DELETE FROM EMPLEADOV WHERE CODIGO_EMPLEADO='{0}';", codigoEmpleado
                 )
             );
             Connection.Close();
