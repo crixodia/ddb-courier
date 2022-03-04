@@ -54,20 +54,20 @@ namespace Courier.GUI.Cliente
             // BtnCancel
             // 
             this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnCancel.Location = new System.Drawing.Point(222, 336);
+            this.BtnCancel.Location = new System.Drawing.Point(208, 295);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
-            this.BtnCancel.TabIndex = 31;
+            this.BtnCancel.TabIndex = 10;
             this.BtnCancel.Text = "Cancelar";
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // BtnOk
             // 
-            this.BtnOk.Location = new System.Drawing.Point(141, 336);
+            this.BtnOk.Location = new System.Drawing.Point(126, 295);
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Size = new System.Drawing.Size(75, 23);
-            this.BtnOk.TabIndex = 30;
+            this.BtnOk.TabIndex = 9;
             this.BtnOk.Text = "Añadir";
             this.BtnOk.UseVisualStyleBackColor = true;
             this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
@@ -75,7 +75,7 @@ namespace Courier.GUI.Cliente
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(90, 302);
+            this.label7.Location = new System.Drawing.Point(76, 261);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(24, 13);
             this.label7.TabIndex = 29;
@@ -84,7 +84,7 @@ namespace Courier.GUI.Cliente
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(65, 276);
+            this.label5.Location = new System.Drawing.Point(51, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 28;
@@ -93,7 +93,7 @@ namespace Courier.GUI.Cliente
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(62, 213);
+            this.label6.Location = new System.Drawing.Point(48, 172);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 27;
@@ -102,7 +102,7 @@ namespace Courier.GUI.Cliente
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 187);
+            this.label4.Location = new System.Drawing.Point(60, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 26;
@@ -111,7 +111,7 @@ namespace Courier.GUI.Cliente
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 161);
+            this.label3.Location = new System.Drawing.Point(49, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 25;
@@ -120,7 +120,7 @@ namespace Courier.GUI.Cliente
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 77);
+            this.label1.Location = new System.Drawing.Point(60, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 23;
@@ -128,51 +128,51 @@ namespace Courier.GUI.Cliente
             // 
             // TxtTelefono
             // 
-            this.TxtTelefono.Location = new System.Drawing.Point(120, 273);
+            this.TxtTelefono.Location = new System.Drawing.Point(106, 232);
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(176, 20);
-            this.TxtTelefono.TabIndex = 21;
+            this.TxtTelefono.TabIndex = 7;
             // 
             // TxtDireccion
             // 
-            this.TxtDireccion.Location = new System.Drawing.Point(120, 210);
+            this.TxtDireccion.Location = new System.Drawing.Point(107, 169);
             this.TxtDireccion.Multiline = true;
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(176, 57);
-            this.TxtDireccion.TabIndex = 20;
+            this.TxtDireccion.TabIndex = 6;
             // 
             // TxtCiudad
             // 
-            this.TxtCiudad.Location = new System.Drawing.Point(120, 184);
+            this.TxtCiudad.Location = new System.Drawing.Point(106, 143);
             this.TxtCiudad.Name = "TxtCiudad";
             this.TxtCiudad.Size = new System.Drawing.Size(176, 20);
-            this.TxtCiudad.TabIndex = 19;
+            this.TxtCiudad.TabIndex = 5;
             // 
             // TxtProvincia
             // 
-            this.TxtProvincia.Location = new System.Drawing.Point(120, 158);
+            this.TxtProvincia.Location = new System.Drawing.Point(106, 117);
             this.TxtProvincia.Name = "TxtProvincia";
             this.TxtProvincia.Size = new System.Drawing.Size(176, 20);
-            this.TxtProvincia.TabIndex = 18;
+            this.TxtProvincia.TabIndex = 4;
             // 
             // TxtCedula
             // 
-            this.TxtCedula.Location = new System.Drawing.Point(120, 74);
+            this.TxtCedula.Location = new System.Drawing.Point(106, 38);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(176, 20);
-            this.TxtCedula.TabIndex = 16;
+            this.TxtCedula.TabIndex = 1;
             // 
             // TxtZip
             // 
-            this.TxtZip.Location = new System.Drawing.Point(120, 299);
+            this.TxtZip.Location = new System.Drawing.Point(106, 258);
             this.TxtZip.Name = "TxtZip";
             this.TxtZip.Size = new System.Drawing.Size(176, 20);
-            this.TxtZip.TabIndex = 32;
+            this.TxtZip.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 135);
+            this.label2.Location = new System.Drawing.Point(56, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 34;
@@ -180,15 +180,15 @@ namespace Courier.GUI.Cliente
             // 
             // TxtNombre
             // 
-            this.TxtNombre.Location = new System.Drawing.Point(120, 132);
+            this.TxtNombre.Location = new System.Drawing.Point(106, 91);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(176, 20);
-            this.TxtNombre.TabIndex = 33;
+            this.TxtNombre.TabIndex = 3;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 48);
+            this.label8.Location = new System.Drawing.Point(10, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 13);
             this.label8.TabIndex = 54;
@@ -196,15 +196,15 @@ namespace Courier.GUI.Cliente
             // 
             // TxtCodigo
             // 
-            this.TxtCodigo.Location = new System.Drawing.Point(120, 48);
+            this.TxtCodigo.Location = new System.Drawing.Point(106, 12);
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(177, 20);
-            this.TxtCodigo.TabIndex = 53;
+            this.TxtCodigo.TabIndex = 0;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(72, 103);
+            this.label9.Location = new System.Drawing.Point(52, 67);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 13);
             this.label9.TabIndex = 57;
@@ -218,10 +218,10 @@ namespace Courier.GUI.Cliente
             "Quito",
             "Guayaquil",
             "Cuenca"});
-            this.CmbSuc.Location = new System.Drawing.Point(127, 100);
+            this.CmbSuc.Location = new System.Drawing.Point(106, 64);
             this.CmbSuc.Name = "CmbSuc";
-            this.CmbSuc.Size = new System.Drawing.Size(138, 21);
-            this.CmbSuc.TabIndex = 56;
+            this.CmbSuc.Size = new System.Drawing.Size(176, 21);
+            this.CmbSuc.TabIndex = 2;
             // 
             // ClienteNewEdit
             // 
@@ -229,7 +229,7 @@ namespace Courier.GUI.Cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancel;
-            this.ClientSize = new System.Drawing.Size(323, 381);
+            this.ClientSize = new System.Drawing.Size(295, 330);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.CmbSuc);
             this.Controls.Add(this.label8);

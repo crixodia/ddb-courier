@@ -52,15 +52,27 @@ namespace Courier.Driver
         /// <returns>Número de filas actualizadas</returns>
         public int Update()
         {
+            string qs = "[CKPDESKTOP]";
+            switch (Codigo)
+            {
+                case 2: // Guayaquil
+                    qs = "[AFTERKILLER_PC]";
+                    break;
+                case 3: // Cuenca
+                    qs = "[BIOSTAR]";
+                    break;
+            }
+
             int result = Connection.CrudNonReader(
                 String.Format(
-                    "UPDATE SUCURSALV " +
+                    "UPDATE {4}.[tramaco].[dbo].[sucursal] " +
                     "SET PROVINCIA_SUCURSAL='{0}', CIUDAD_SUCURSAL='{1}', DIRECCION_SUCURSAL='{2}' " +
                     "WHERE CODIGO_SUCURSAL='{3}'",
                     Provincia,
                     Ciudad,
                     Direccion,
-                    Codigo
+                    Codigo,
+                    qs
                 )
             );
             Connection.Close();

@@ -51,10 +51,10 @@ namespace Courier.GUI.Vehiculo
             // 
             // TxtEmpleado
             // 
-            this.TxtEmpleado.Location = new System.Drawing.Point(108, 35);
+            this.TxtEmpleado.Location = new System.Drawing.Point(107, 38);
             this.TxtEmpleado.Name = "TxtEmpleado";
-            this.TxtEmpleado.Size = new System.Drawing.Size(138, 20);
-            this.TxtEmpleado.TabIndex = 0;
+            this.TxtEmpleado.Size = new System.Drawing.Size(175, 20);
+            this.TxtEmpleado.TabIndex = 1;
             // 
             // CmbSuc
             // 
@@ -64,38 +64,38 @@ namespace Courier.GUI.Vehiculo
             "Quito",
             "Guayaquil",
             "Cuenca"});
-            this.CmbSuc.Location = new System.Drawing.Point(108, 61);
+            this.CmbSuc.Location = new System.Drawing.Point(107, 64);
             this.CmbSuc.Name = "CmbSuc";
-            this.CmbSuc.Size = new System.Drawing.Size(138, 21);
-            this.CmbSuc.TabIndex = 1;
+            this.CmbSuc.Size = new System.Drawing.Size(175, 21);
+            this.CmbSuc.TabIndex = 2;
             // 
             // TxtPlaca
             // 
-            this.TxtPlaca.Location = new System.Drawing.Point(108, 88);
+            this.TxtPlaca.Location = new System.Drawing.Point(107, 91);
             this.TxtPlaca.Name = "TxtPlaca";
-            this.TxtPlaca.Size = new System.Drawing.Size(138, 20);
-            this.TxtPlaca.TabIndex = 2;
+            this.TxtPlaca.Size = new System.Drawing.Size(175, 20);
+            this.TxtPlaca.TabIndex = 3;
             // 
             // TxtModel
             // 
-            this.TxtModel.Location = new System.Drawing.Point(108, 114);
+            this.TxtModel.Location = new System.Drawing.Point(107, 117);
             this.TxtModel.Name = "TxtModel";
-            this.TxtModel.Size = new System.Drawing.Size(138, 20);
-            this.TxtModel.TabIndex = 3;
+            this.TxtModel.Size = new System.Drawing.Size(175, 20);
+            this.TxtModel.TabIndex = 4;
             // 
             // TxtYear
             // 
-            this.TxtYear.Location = new System.Drawing.Point(108, 140);
+            this.TxtYear.Location = new System.Drawing.Point(107, 143);
             this.TxtYear.Name = "TxtYear";
-            this.TxtYear.Size = new System.Drawing.Size(138, 20);
-            this.TxtYear.TabIndex = 4;
+            this.TxtYear.Size = new System.Drawing.Size(175, 20);
+            this.TxtYear.TabIndex = 5;
             // 
             // TxtCap
             // 
-            this.TxtCap.Location = new System.Drawing.Point(108, 166);
+            this.TxtCap.Location = new System.Drawing.Point(107, 169);
             this.TxtCap.Name = "TxtCap";
-            this.TxtCap.Size = new System.Drawing.Size(138, 20);
-            this.TxtCap.TabIndex = 5;
+            this.TxtCap.Size = new System.Drawing.Size(175, 20);
+            this.TxtCap.TabIndex = 6;
             // 
             // CmbType
             // 
@@ -106,10 +106,10 @@ namespace Courier.GUI.Vehiculo
             "CL",
             "CP",
             "CA"});
-            this.CmbType.Location = new System.Drawing.Point(108, 192);
+            this.CmbType.Location = new System.Drawing.Point(107, 195);
             this.CmbType.Name = "CmbType";
-            this.CmbType.Size = new System.Drawing.Size(138, 21);
-            this.CmbType.TabIndex = 6;
+            this.CmbType.Size = new System.Drawing.Size(175, 21);
+            this.CmbType.TabIndex = 7;
             // 
             // label1
             // 
@@ -176,10 +176,10 @@ namespace Courier.GUI.Vehiculo
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(91, 229);
+            this.btnOk.Location = new System.Drawing.Point(126, 229);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 14;
+            this.btnOk.TabIndex = 8;
             this.btnOk.Text = "Añadir";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.BtnOk_Click);
@@ -187,10 +187,10 @@ namespace Courier.GUI.Vehiculo
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(172, 229);
+            this.btnCancel.Location = new System.Drawing.Point(207, 229);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 15;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -206,10 +206,10 @@ namespace Courier.GUI.Vehiculo
             // 
             // TxtId
             // 
-            this.TxtId.Location = new System.Drawing.Point(109, 9);
+            this.TxtId.Location = new System.Drawing.Point(108, 12);
             this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(138, 20);
-            this.TxtId.TabIndex = 16;
+            this.TxtId.Size = new System.Drawing.Size(175, 20);
+            this.TxtId.TabIndex = 0;
             // 
             // VehiculoNewEdit
             // 
@@ -217,7 +217,7 @@ namespace Courier.GUI.Vehiculo
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(259, 260);
+            this.ClientSize = new System.Drawing.Size(295, 264);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TxtId);
             this.Controls.Add(this.btnCancel);

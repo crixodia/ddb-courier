@@ -17,7 +17,7 @@ namespace Courier
         public Main(string dbName)
         {
             InitializeComponent();
-            Icon = Properties.Resources.database;
+            //Icon = Properties.Resources.database;
             StatusLabel.Text = "Conectado a " + dbName;
         }
 
@@ -138,6 +138,12 @@ namespace Courier
         {
             form.MdiParent = this;
             form.Show();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form ab = new GUI.About();
+            ab.ShowDialog();
         }
     }
 }

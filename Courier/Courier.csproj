@@ -52,6 +52,12 @@
     <Compile Include="Driver\Guia.cs" />
     <Compile Include="Driver\Sucursal.cs" />
     <Compile Include="Driver\Vehiculo.cs" />
+    <Compile Include="GUI\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Cliente\ClienteGui.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Cliente\ClienteGui.resx">
       <DependentUpon>ClienteGui.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\008-faq.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

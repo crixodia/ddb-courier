@@ -9,6 +9,7 @@ namespace Courier.Driver
 {
     public class Guia
     {
+        // Guia
         public string Codigo { get; set; }
         public int Sucursal { get; set; }
         public string Empleado { get; set; }
@@ -19,7 +20,11 @@ namespace Courier.Driver
         public string CiudadDestino { get; set; }
         public string DireccionDestino { get; set; }
 
-        public Guia(int sucursal, string empleado, string cliente, string fechaRecepcion, string descripcion, string provincia, string ciudad, string direccion, string codigo)
+        // Estado paquete
+        public string FechaEntrega { get; set; }
+        public char Estado { get; set; }
+
+        public Guia(int sucursal, string empleado, string cliente, string fechaRecepcion, string descripcion, string provincia, string ciudad, string direccion, string fechaEntrega, char estado, string codigo)
         {
             Sucursal = sucursal;
             Empleado = empleado;
@@ -29,6 +34,10 @@ namespace Courier.Driver
             ProvinciaDestino = provincia;
             CiudadDestino = ciudad;
             DireccionDestino = direccion;
+
+            FechaEntrega = fechaEntrega;
+            Estado = estado;
+
             Codigo = codigo;
         }
 
@@ -36,9 +45,11 @@ namespace Courier.Driver
         {
             int result = Connection.CrudNonReader(
                 string.Format(
-                "insert into [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] values('{0}', '{1}', null, 'B')",
-                Codigo,
-                Sucursal
+                "insert into [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] values('{0}', '{1}', '{2}', '{3}')",
+                    Codigo,
+                    Sucursal,
+                    FechaEntrega,
+                    Estado
                 )
             );
             Connection.Close();
@@ -49,10 +60,12 @@ namespace Courier.Driver
         {
             int result = Connection.CrudNonReader(
                 string.Format(
-                "update [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] set CODIGO_PAQUETE = '{0}', SUC_CODIGO_SUCURSAL='{1}' where CODIGO_PAQUETE = '{2}'",
-                newCodigo,
-                Sucursal,
-                Codigo
+                "update [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] set CODIGO_PAQUETE = '{0}', SUC_CODIGO_SUCURSAL='{1}', FECHA_ENTREGA = '{2}', ESTADO = '{3}' where CODIGO_PAQUETE = '{4}'",
+                    newCodigo,
+                    Sucursal,
+                    FechaEntrega,
+                    Estado,
+                    Codigo
                 )
             );
             Connection.Close();
@@ -114,28 +127,38 @@ namespace Courier.Driver
 
         public static DataTable GetAll()
         {
-            DataTable dt = Connection.Query("SELECT * FROM GUIAV");
+            DataTable dt = Connection.Query("select GUIAV.CODIGO_PAQUETE, guiav.SUC_CODIGO_SUCURSAL, EMP_CODIGO_EMPLEADO, CLI_CODIGO_CLIENTE, FECHA_RECEPCION, DESCRIPCION, DIRECCION_DESTINO, CIUDAD_DESTINO, PROVINCIA_DESTINO, FECHA_ENTREGA, ESTADO from guiav inner join [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] on guiav.CODIGO_PAQUETE = ESTADO_PAQUETE.CODIGO_PAQUETE;");
             Connection.Close();
             return dt;
         }
 
-
-        public static int DeleteByCodigo(string codigoPaquete)
+        public static int DeleteEstado(string codigoPaquete)
         {
             int result = Connection.CrudNonReader(
                 String.Format(
-                    "set xact_abort on;DELETE FROM GUIAV WHERE CODIGO_PAQUETE={0};", codigoPaquete
+                    "DELETE FROM [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] WHERE CODIGO_PAQUETE='{0}';", codigoPaquete
                 )
             );
             Connection.Close();
             return result;
         }
 
+        public static int DeleteByCodigo(string codigoPaquete)
+        {
+            int result = Connection.CrudNonReader(
+                String.Format(
+                    "set xact_abort on;DELETE FROM GUIAV WHERE CODIGO_PAQUETE='{0}';", codigoPaquete
+                )
+            );
+            Connection.Close();
+            return DeleteEstado(codigoPaquete) + result;
+        }
+
         public static DataTable GetByCodigoCliente(string codigoCliente)
         {
             DataTable dt = Connection.Query(
                 string.Format(
-                    "SELECT * FROM GUIAV WHERE CLI_CODIGO_CLIENTE='{0}'",
+                    "SELECT GUIAV.CODIGO_PAQUETE, guiav.SUC_CODIGO_SUCURSAL, EMP_CODIGO_EMPLEADO, CLI_CODIGO_CLIENTE, FECHA_RECEPCION, DESCRIPCION, DIRECCION_DESTINO, CIUDAD_DESTINO, PROVINCIA_DESTINO, FECHA_ENTREGA, ESTADO from guiav inner join [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] on guiav.CODIGO_PAQUETE = ESTADO_PAQUETE.CODIGO_PAQUETE WHERE CLI_CODIGO_CLIENTE='{0}'",
                     codigoCliente
                 )
             );
@@ -147,7 +170,7 @@ namespace Courier.Driver
         {
             DataTable dt = Connection.Query(
                 string.Format(
-                    "SELECT * FROM GUIAV WHERE FECHA_RECEPCION BETWEEN '{0}' AND '{1}'",
+                    "SELECT GUIAV.CODIGO_PAQUETE, guiav.SUC_CODIGO_SUCURSAL, EMP_CODIGO_EMPLEADO, CLI_CODIGO_CLIENTE, FECHA_RECEPCION, DESCRIPCION, DIRECCION_DESTINO, CIUDAD_DESTINO, PROVINCIA_DESTINO, FECHA_ENTREGA, ESTADO from guiav inner join [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] on guiav.CODIGO_PAQUETE = ESTADO_PAQUETE.CODIGO_PAQUETE WHERE FECHA_RECEPCION BETWEEN '{0}' AND '{1}'",
                     fechaInit,
                     fechaEnd
                 )
@@ -161,7 +184,7 @@ namespace Courier.Driver
         {
             DataTable dt = Connection.Query(
                 string.Format(
-                    "SELECT * FROM GUIAV WHERE convert(varchar, PROVINCIA_DESTINO)='{0}'",
+                    "SELECT GUIAV.CODIGO_PAQUETE, guiav.SUC_CODIGO_SUCURSAL, EMP_CODIGO_EMPLEADO, CLI_CODIGO_CLIENTE, FECHA_RECEPCION, DESCRIPCION, DIRECCION_DESTINO, CIUDAD_DESTINO, PROVINCIA_DESTINO, FECHA_ENTREGA, ESTADO from guiav inner join [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] on guiav.CODIGO_PAQUETE = ESTADO_PAQUETE.CODIGO_PAQUETE WHERE convert(varchar, PROVINCIA_DESTINO)='{0}'",
                     provincia
                 )
             );
@@ -173,7 +196,7 @@ namespace Courier.Driver
         {
             DataTable dt = Connection.Query(
                 string.Format(
-                    "SELECT * FROM GUIAV WHERE convert(varchar, CIUDAD_DESTINO)='{0}'",
+                    "SELECT GUIAV.CODIGO_PAQUETE, guiav.SUC_CODIGO_SUCURSAL, EMP_CODIGO_EMPLEADO, CLI_CODIGO_CLIENTE, FECHA_RECEPCION, DESCRIPCION, DIRECCION_DESTINO, CIUDAD_DESTINO, PROVINCIA_DESTINO, FECHA_ENTREGA, ESTADO from guiav inner join [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] on guiav.CODIGO_PAQUETE = ESTADO_PAQUETE.CODIGO_PAQUETE WHERE convert(varchar, CIUDAD_DESTINO)='{0}'",
                     ciudad
                 )
             );

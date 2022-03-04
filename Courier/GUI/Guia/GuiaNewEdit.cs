@@ -13,7 +13,7 @@ namespace Courier.GUI.Guia
     public partial class GuiaNewEdit : Form
     {
         string codigo = "";
-        public GuiaNewEdit(Driver.Guia sc = null)
+        public GuiaNewEdit(bool editable = false, Driver.Guia sc = null)
         {
             InitializeComponent();
             if (sc == null)
@@ -34,8 +34,17 @@ namespace Courier.GUI.Guia
                 TxtCiu.Text = sc.CiudadDestino;
                 TxtDir.Text = sc.DireccionDestino;
                 TxtFecha.Text = sc.FechaRecepcion;
+                TxtFechaEntrega.Text = sc.FechaEntrega;
+                Console.WriteLine(sc.Estado);
+                CmbEstado.SelectedIndex = CmbEstado.Items.IndexOf(sc.Estado.ToString());
 
                 BtnOk.Text = "Actualizar";
+            }
+
+            if (!editable)
+            {
+                TxtFechaEntrega.Enabled = false;
+                CmbEstado.Enabled = false;
             }
         }
 
@@ -55,6 +64,8 @@ namespace Courier.GUI.Guia
                 TxtProv.Text,
                 TxtCiu.Text,
                 TxtDir.Text,
+                TxtFechaEntrega.Text,
+                CmbEstado.SelectedItem.ToString()[0],
                 codigo
             );
 

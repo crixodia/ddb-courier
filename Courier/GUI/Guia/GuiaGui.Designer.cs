@@ -50,7 +50,6 @@ namespace Courier.GUI.Guia
             // 
             this.Dgv.AllowUserToAddRows = false;
             this.Dgv.AllowUserToDeleteRows = false;
-            this.Dgv.AllowUserToResizeColumns = false;
             this.Dgv.AllowUserToResizeRows = false;
             this.Dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;

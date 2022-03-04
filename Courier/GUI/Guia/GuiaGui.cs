@@ -59,7 +59,7 @@ namespace Courier.GUI.Guia
                 if (dgvr.Count == 1)
                 {
                     DataGridViewCellCollection row = dgvr[0].Cells;
-                    var sne = new GuiaNewEdit(
+                    var sne = new GuiaNewEdit(true,
                         new Driver.Guia(
                             int.Parse(row[1].Value.ToString()),
                             row[2].Value.ToString(),
@@ -69,6 +69,8 @@ namespace Courier.GUI.Guia
                             row[6].Value.ToString(),
                             row[7].Value.ToString(),
                             row[8].Value.ToString(),
+                            row[9].Value.ToString(),
+                            row[10].Value.ToString()[0],
                             row[0].Value.ToString()
                         )
                     )
