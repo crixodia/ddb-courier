@@ -132,6 +132,7 @@ namespace Courier.GUI.Guia
             // 
             // TxtCiu
             // 
+            this.TxtCiu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCiu.Location = new System.Drawing.Point(107, 207);
             this.TxtCiu.Name = "TxtCiu";
             this.TxtCiu.Size = new System.Drawing.Size(176, 20);
@@ -139,6 +140,7 @@ namespace Courier.GUI.Guia
             // 
             // TxtProv
             // 
+            this.TxtProv.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtProv.Location = new System.Drawing.Point(107, 181);
             this.TxtProv.Name = "TxtProv";
             this.TxtProv.Size = new System.Drawing.Size(176, 20);
@@ -146,6 +148,7 @@ namespace Courier.GUI.Guia
             // 
             // TxtDesc
             // 
+            this.TxtDesc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtDesc.Location = new System.Drawing.Point(107, 117);
             this.TxtDesc.Multiline = true;
             this.TxtDesc.Name = "TxtDesc";
@@ -167,6 +170,7 @@ namespace Courier.GUI.Guia
             // 
             // TxtCodEmpleado
             // 
+            this.TxtCodEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCodEmpleado.Location = new System.Drawing.Point(107, 38);
             this.TxtCodEmpleado.Name = "TxtCodEmpleado";
             this.TxtCodEmpleado.Size = new System.Drawing.Size(176, 20);
@@ -183,6 +187,7 @@ namespace Courier.GUI.Guia
             // 
             // TxtCodCliente
             // 
+            this.TxtCodCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCodCliente.Location = new System.Drawing.Point(107, 64);
             this.TxtCodCliente.Name = "TxtCodCliente";
             this.TxtCodCliente.Size = new System.Drawing.Size(176, 20);
@@ -190,6 +195,7 @@ namespace Courier.GUI.Guia
             // 
             // TxtDir
             // 
+            this.TxtDir.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtDir.Location = new System.Drawing.Point(107, 259);
             this.TxtDir.Multiline = true;
             this.TxtDir.Name = "TxtDir";
@@ -207,6 +213,7 @@ namespace Courier.GUI.Guia
             // 
             // TxtCodPaq
             // 
+            this.TxtCodPaq.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCodPaq.Location = new System.Drawing.Point(107, 12);
             this.TxtCodPaq.Name = "TxtCodPaq";
             this.TxtCodPaq.Size = new System.Drawing.Size(176, 20);
@@ -223,6 +230,7 @@ namespace Courier.GUI.Guia
             // 
             // TxtFecha
             // 
+            this.TxtFecha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtFecha.Location = new System.Drawing.Point(107, 233);
             this.TxtFecha.Name = "TxtFecha";
             this.TxtFecha.Size = new System.Drawing.Size(176, 20);
@@ -265,6 +273,7 @@ namespace Courier.GUI.Guia
             // 
             // TxtFechaEntrega
             // 
+            this.TxtFechaEntrega.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtFechaEntrega.Location = new System.Drawing.Point(107, 350);
             this.TxtFechaEntrega.Name = "TxtFechaEntrega";
             this.TxtFechaEntrega.Size = new System.Drawing.Size(176, 20);

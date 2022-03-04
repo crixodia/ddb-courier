@@ -41,6 +41,7 @@ namespace Courier.GUI.Sucursal
             // 
             // txtDireccion
             // 
+            this.txtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDireccion.Location = new System.Drawing.Point(70, 64);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
@@ -76,6 +77,7 @@ namespace Courier.GUI.Sucursal
             // 
             // txtCiudad
             // 
+            this.txtCiudad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCiudad.Location = new System.Drawing.Point(70, 38);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(213, 20);
@@ -83,6 +85,7 @@ namespace Courier.GUI.Sucursal
             // 
             // txtProvincia
             // 
+            this.txtProvincia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtProvincia.Location = new System.Drawing.Point(70, 12);
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(213, 20);

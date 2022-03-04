@@ -123,6 +123,7 @@ namespace Courier.GUI.Empleado
             // TscCriteria
             // 
             this.TscCriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TscCriteria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TscCriteria.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TscCriteria.Name = "TscCriteria";
             this.TscCriteria.Size = new System.Drawing.Size(200, 25);

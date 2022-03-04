@@ -128,6 +128,7 @@ namespace Courier.GUI.Empleado
             // 
             // TxtTelefono
             // 
+            this.TxtTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtTelefono.Location = new System.Drawing.Point(104, 232);
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(177, 20);
@@ -135,6 +136,7 @@ namespace Courier.GUI.Empleado
             // 
             // TxtDireccion
             // 
+            this.TxtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtDireccion.Location = new System.Drawing.Point(104, 169);
             this.TxtDireccion.Multiline = true;
             this.TxtDireccion.Name = "TxtDireccion";
@@ -143,6 +145,7 @@ namespace Courier.GUI.Empleado
             // 
             // TxtCiudad
             // 
+            this.TxtCiudad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCiudad.Location = new System.Drawing.Point(104, 143);
             this.TxtCiudad.Name = "TxtCiudad";
             this.TxtCiudad.Size = new System.Drawing.Size(177, 20);
@@ -150,6 +153,7 @@ namespace Courier.GUI.Empleado
             // 
             // TxtProvincia
             // 
+            this.TxtProvincia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtProvincia.Location = new System.Drawing.Point(104, 117);
             this.TxtProvincia.Name = "TxtProvincia";
             this.TxtProvincia.Size = new System.Drawing.Size(177, 20);
@@ -157,6 +161,7 @@ namespace Courier.GUI.Empleado
             // 
             // TxtCedula
             // 
+            this.TxtCedula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCedula.Location = new System.Drawing.Point(104, 38);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(177, 20);
@@ -173,6 +178,7 @@ namespace Courier.GUI.Empleado
             // 
             // TxtNombre
             // 
+            this.TxtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtNombre.Location = new System.Drawing.Point(104, 91);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(177, 20);
@@ -189,6 +195,7 @@ namespace Courier.GUI.Empleado
             // 
             // TxtCodigo
             // 
+            this.TxtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCodigo.Location = new System.Drawing.Point(104, 12);
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(177, 20);

@@ -128,6 +128,7 @@ namespace Courier.GUI.Cliente
             // 
             // TxtTelefono
             // 
+            this.TxtTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtTelefono.Location = new System.Drawing.Point(106, 232);
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(176, 20);
@@ -135,6 +136,7 @@ namespace Courier.GUI.Cliente
             // 
             // TxtDireccion
             // 
+            this.TxtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtDireccion.Location = new System.Drawing.Point(107, 169);
             this.TxtDireccion.Multiline = true;
             this.TxtDireccion.Name = "TxtDireccion";
@@ -143,6 +145,7 @@ namespace Courier.GUI.Cliente
             // 
             // TxtCiudad
             // 
+            this.TxtCiudad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCiudad.Location = new System.Drawing.Point(106, 143);
             this.TxtCiudad.Name = "TxtCiudad";
             this.TxtCiudad.Size = new System.Drawing.Size(176, 20);
@@ -150,6 +153,7 @@ namespace Courier.GUI.Cliente
             // 
             // TxtProvincia
             // 
+            this.TxtProvincia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtProvincia.Location = new System.Drawing.Point(106, 117);
             this.TxtProvincia.Name = "TxtProvincia";
             this.TxtProvincia.Size = new System.Drawing.Size(176, 20);
@@ -157,6 +161,7 @@ namespace Courier.GUI.Cliente
             // 
             // TxtCedula
             // 
+            this.TxtCedula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCedula.Location = new System.Drawing.Point(106, 38);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(176, 20);
@@ -164,6 +169,7 @@ namespace Courier.GUI.Cliente
             // 
             // TxtZip
             // 
+            this.TxtZip.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtZip.Location = new System.Drawing.Point(106, 258);
             this.TxtZip.Name = "TxtZip";
             this.TxtZip.Size = new System.Drawing.Size(176, 20);
@@ -180,6 +186,7 @@ namespace Courier.GUI.Cliente
             // 
             // TxtNombre
             // 
+            this.TxtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtNombre.Location = new System.Drawing.Point(106, 91);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(176, 20);
@@ -196,6 +203,7 @@ namespace Courier.GUI.Cliente
             // 
             // TxtCodigo
             // 
+            this.TxtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCodigo.Location = new System.Drawing.Point(106, 12);
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(177, 20);

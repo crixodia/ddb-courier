@@ -51,6 +51,7 @@ namespace Courier.GUI.Vehiculo
             // 
             // TxtEmpleado
             // 
+            this.TxtEmpleado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtEmpleado.Location = new System.Drawing.Point(107, 38);
             this.TxtEmpleado.Name = "TxtEmpleado";
             this.TxtEmpleado.Size = new System.Drawing.Size(175, 20);
@@ -71,6 +72,7 @@ namespace Courier.GUI.Vehiculo
             // 
             // TxtPlaca
             // 
+            this.TxtPlaca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtPlaca.Location = new System.Drawing.Point(107, 91);
             this.TxtPlaca.Name = "TxtPlaca";
             this.TxtPlaca.Size = new System.Drawing.Size(175, 20);
@@ -78,6 +80,7 @@ namespace Courier.GUI.Vehiculo
             // 
             // TxtModel
             // 
+            this.TxtModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtModel.Location = new System.Drawing.Point(107, 117);
             this.TxtModel.Name = "TxtModel";
             this.TxtModel.Size = new System.Drawing.Size(175, 20);
@@ -85,6 +88,7 @@ namespace Courier.GUI.Vehiculo
             // 
             // TxtYear
             // 
+            this.TxtYear.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtYear.Location = new System.Drawing.Point(107, 143);
             this.TxtYear.Name = "TxtYear";
             this.TxtYear.Size = new System.Drawing.Size(175, 20);
@@ -92,6 +96,7 @@ namespace Courier.GUI.Vehiculo
             // 
             // TxtCap
             // 
+            this.TxtCap.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCap.Location = new System.Drawing.Point(107, 169);
             this.TxtCap.Name = "TxtCap";
             this.TxtCap.Size = new System.Drawing.Size(175, 20);
@@ -206,6 +211,7 @@ namespace Courier.GUI.Vehiculo
             // 
             // TxtId
             // 
+            this.TxtId.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtId.Location = new System.Drawing.Point(108, 12);
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(175, 20);

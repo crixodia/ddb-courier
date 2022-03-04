@@ -77,6 +77,7 @@ namespace Courier.GUI.Guia
             // TscCriteria
             // 
             this.TscCriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TscCriteria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TscCriteria.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TscCriteria.Name = "TscCriteria";
             this.TscCriteria.Size = new System.Drawing.Size(200, 25);
@@ -168,6 +169,7 @@ namespace Courier.GUI.Guia
             // tsDateTo
             // 
             this.tsDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tsDateTo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tsDateTo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tsDateTo.Name = "tsDateTo";
             this.tsDateTo.Size = new System.Drawing.Size(100, 25);
