@@ -71,6 +71,7 @@ namespace Courier.GUI.Guia
 
             if (codigo == "")
             {
+                sc.Codigo = TxtCodPaq.Text;
                 sc.Insert();
             }
             else

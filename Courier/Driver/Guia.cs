@@ -45,7 +45,7 @@ namespace Courier.Driver
         {
             int result = Connection.CrudNonReader(
                 string.Format(
-                "insert into [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] values('{0}', '{1}', '{2}', '{3}')",
+                "[CKPDESKTOP].[tramaco].[dbo].[InsertEstado] N'{0}', N'{1}', N'{2}', N'{3}';",
                     Codigo,
                     Sucursal,
                     FechaEntrega,
@@ -60,7 +60,7 @@ namespace Courier.Driver
         {
             int result = Connection.CrudNonReader(
                 string.Format(
-                "update [CKPDESKTOP].[tramaco].[dbo].[ESTADO_PAQUETE] set CODIGO_PAQUETE = '{0}', SUC_CODIGO_SUCURSAL='{1}', FECHA_ENTREGA = '{2}', ESTADO = '{3}' where CODIGO_PAQUETE = '{4}'",
+                "[CKPDESKTOP].[tramaco].[dbo].[UpdateEstado] N'{0}', N'{1}', N'{2}', N'{3}' N'{4}';",
                     newCodigo,
                     Sucursal,
                     FechaEntrega,

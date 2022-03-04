@@ -41,9 +41,9 @@ namespace Courier.GUI.Guia
 
         private void TsbNew_Click(object sender, EventArgs e)
         {
-            var sne = new GuiaNewEdit
+            var sne = new GuiaNewEdit(true)
             {
-                Text = "Nuevo guía"
+                Text = "Nueva guía"
             };
 
             sne.ShowDialog(this);
