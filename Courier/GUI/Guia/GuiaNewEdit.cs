@@ -16,6 +16,15 @@ namespace Courier.GUI.Guia
         public GuiaNewEdit(bool editable = false, Driver.Guia sc = null)
         {
             InitializeComponent();
+
+            if (!editable)
+            {
+                TxtFechaEntrega.Enabled = false;
+                CmbEstado.Enabled = false;
+                CmbEstado.SelectedIndex = 0;
+
+            }
+
             if (sc == null)
             {
                 Icon = Properties.Resources._new;
@@ -39,12 +48,6 @@ namespace Courier.GUI.Guia
                 CmbEstado.SelectedIndex = CmbEstado.Items.IndexOf(sc.Estado.ToString());
 
                 BtnOk.Text = "Actualizar";
-            }
-
-            if (!editable)
-            {
-                TxtFechaEntrega.Enabled = false;
-                CmbEstado.Enabled = false;
             }
         }
 
