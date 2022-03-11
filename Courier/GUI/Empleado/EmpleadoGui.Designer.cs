@@ -225,6 +225,7 @@ namespace Courier.GUI.Empleado
             this.Name = "EmpleadoGui";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleado";
+            this.Load += new System.EventHandler(this.EmpleadoGui_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv)).EndInit();
             this.panel1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);

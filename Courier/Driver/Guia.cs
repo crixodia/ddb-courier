@@ -60,7 +60,7 @@ namespace Courier.Driver
         {
             int result = Connection.CrudNonReader(
                 string.Format(
-                "[CKPDESKTOP].[tramaco].[dbo].[UpdateEstado] N'{0}', N'{1}', N'{2}', N'{3}' N'{4}';",
+                "[CKPDESKTOP].[tramaco].[dbo].[UpdateEstado] N'{0}', N'{1}', N'{2}', N'{3}', N'{4}';",
                     newCodigo,
                     Sucursal,
                     FechaEntrega,
@@ -202,6 +202,20 @@ namespace Courier.Driver
             );
             Connection.Close();
             return dt;
+        }
+
+        public static bool ValidateByCodigo(string codigo)
+        {
+            DataTable dt = Connection.Query(string.Format("SELECT CODIGO_PAQUETE FROM GUIAV"));
+            Connection.Close();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[0].ToString() == codigo)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

@@ -110,7 +110,7 @@ namespace Courier.GUI.Empleado
                 : "¿Está seguro de eliminar " + (dgvr.Count == 1 ? "este empleado?" : "{0} empleados?");
 
             DialogResult dr = MessageBox.Show(
-                message,
+                String.Format(message, dgvr.Count),
                 "Empleado",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
@@ -189,6 +189,11 @@ namespace Courier.GUI.Empleado
                     Dgv.DataSource = Driver.Empleado.GetAll();
                     break;
             }
+        }
+
+        private void EmpleadoGui_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

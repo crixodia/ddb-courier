@@ -13,9 +13,14 @@ namespace Courier.GUI.Empleado
     public partial class EmpleadoNewEdit : Form
     {
         string codigo = "";
+        string cedula = "";
         public EmpleadoNewEdit(Driver.Empleado sc = null)
         {
             InitializeComponent();
+            
+            CmbSuc.SelectedIndex = 0;
+            CmbRol.SelectedIndex = 0;
+
             if (sc == null)
             {
                 Icon = Properties.Resources._new;
@@ -27,13 +32,23 @@ namespace Courier.GUI.Empleado
                 codigo = sc.Codigo;
                 TxtCodigo.Text = sc.Codigo;
                 TxtCedula.Text = sc.Cedula;
+                cedula = sc.Cedula;
                 TxtNombre.Text = sc.Nombre;
                 TxtProvincia.Text = sc.Provincia;
                 TxtCiudad.Text = sc.Ciudad;
                 TxtTelefono.Text = sc.Telefono;
                 TxtDireccion.Text = sc.Direccion;
                 CmbSuc.SelectedIndex = sc.Sucursal - 1;
-                CmbRol.SelectedIndex = CmbRol.Items.IndexOf(sc.Rol.ToString());
+
+
+                var crit = new Dictionary<string, string>();
+                crit["B"] = "Bodeguero";
+                crit["C"] = "Chofer";
+                crit["A"] = "Administrador";
+                crit["S"] = "Soporte";
+
+
+                CmbRol.SelectedIndex = CmbRol.Items.IndexOf(crit[sc.Rol.ToString()]);
 
                 BtnOk.Text = "Actualizar";
             }
@@ -52,23 +67,76 @@ namespace Courier.GUI.Empleado
                 TxtCedula.Text,
                 TxtProvincia.Text,
                 TxtCiudad.Text,
-                TxtProvincia.Text,
-                TxtCiudad.Text,
+                TxtDireccion.Text,
+                TxtTelefono.Text,
                 CmbRol.SelectedItem.ToString()[0],
                 codigo
             );
 
-            if (codigo == "")
+            switch (codigo)
             {
-                sc.Codigo = TxtCodigo.Text;
-                sc.Insert();
+                case "":
+                    if (!Driver.Empleado.ValidateByCodigo(TxtCodigo.Text))
+                    {
+                        if (!Driver.Empleado.ValidateByCedula(sc.Cedula))
+                        {
+                            sc.Codigo = TxtCodigo.Text;
+                            sc.Insert();
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "Ya existe un empleado con cédula " + sc.Cedula,
+                                "Empleado",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Stop
+                            );
+                            TxtCedula.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Ya existe un empleado con código " + TxtCodigo.Text,
+                            "Empleado",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop
+                        );
+                        TxtCodigo.Focus();
+                    }
+                    break;
+                default:
+                    if (TxtCodigo.Text == sc.Codigo || !Driver.Empleado.ValidateByCodigo(TxtCodigo.Text))
+                    {
+                        if (TxtCedula.Text == cedula || !Driver.Empleado.ValidateByCedula(sc.Cedula))
+                        {
+                            sc.Update(TxtCodigo.Text);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "Ya existe un empleado con cédula " + sc.Cedula,
+                                "Empleado",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Stop
+                            );
+                            TxtCedula.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Ya existe un empleado con código " + TxtCodigo.Text,
+                            "Empleado",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop
+                        );
+                        TxtCodigo.Focus();
+                    }
+                    break;
             }
-            else
-            {
-                sc.Update(TxtCodigo.Text);
-            }
-
-            Close();
         }
     }
 }

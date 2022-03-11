@@ -13,9 +13,16 @@ namespace Courier.GUI.Guia
     public partial class GuiaNewEdit : Form
     {
         string codigo = "";
+        string empleado = "";
+        string cliente = "";
         public GuiaNewEdit(bool editable = false, Driver.Guia sc = null)
         {
             InitializeComponent();
+
+            CmbEstado.SelectedIndex = 0;
+            CmbSuc.SelectedIndex = 0;
+
+            TxtFecha.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
             if (!editable)
             {
@@ -36,16 +43,24 @@ namespace Courier.GUI.Guia
                 codigo = sc.Codigo;
                 TxtCodPaq.Text = sc.Codigo;
                 TxtCodEmpleado.Text = sc.Empleado;
+                empleado = sc.Empleado;
                 TxtCodCliente.Text = sc.Cliente;
+                cliente = sc.Cliente;
                 CmbSuc.SelectedIndex = sc.Sucursal - 1;
                 TxtDesc.Text = sc.Descripcion;
                 TxtProv.Text = sc.ProvinciaDestino;
                 TxtCiu.Text = sc.CiudadDestino;
                 TxtDir.Text = sc.DireccionDestino;
-                TxtFecha.Text = sc.FechaRecepcion;
-                TxtFechaEntrega.Text = sc.FechaEntrega;
+                TxtFecha.Text = sc.FechaRecepcion.Split(' ')[0];
+                TxtFechaEntrega.Text = sc.FechaEntrega.Split(' ')[0];
                 Console.WriteLine(sc.Estado);
-                CmbEstado.SelectedIndex = CmbEstado.Items.IndexOf(sc.Estado.ToString());
+
+                var crit = new Dictionary<string, string>();
+                crit["B"] = "Bodega";
+                crit["C"] = "Camino";
+                crit["E"] = "Entregado";
+
+                CmbEstado.SelectedIndex = CmbEstado.Items.IndexOf(crit[sc.Estado.ToString()]);
 
                 BtnOk.Text = "Actualizar";
             }
@@ -72,17 +87,96 @@ namespace Courier.GUI.Guia
                 codigo
             );
 
-            if (codigo == "")
+            switch (codigo)
             {
-                sc.Codigo = TxtCodPaq.Text;
-                sc.Insert();
+                case "":
+                    if (!Driver.Guia.ValidateByCodigo(TxtCodPaq.Text))
+                    {
+                        if (Driver.Empleado.ValidateByCodigo(sc.Empleado))
+                        {
+                            if (Driver.Cliente.ValidateByCodigo(sc.Cliente))
+                            {
+                                sc.Codigo = TxtCodPaq.Text;
+                                sc.Insert();
+                                Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show(
+                                    "No existe el cliente " + sc.Cliente,
+                                    "Guía",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Stop
+                                );
+                                TxtCodCliente.Focus();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "No existe el empleado " + sc.Empleado,
+                                "Guía",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Stop
+                            );
+                            TxtCodEmpleado.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Ya existe una guía con código " + TxtCodPaq.Text,
+                            "Guía",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop
+                        );
+                        TxtCodPaq.Focus();
+                    }
+                    break;
+                default:
+                    if (TxtCodPaq.Text == codigo || !Driver.Guia.ValidateByCodigo(TxtCodPaq.Text))
+                    {
+                        if (TxtCodEmpleado.Text == empleado || Driver.Empleado.ValidateByCodigo(sc.Empleado))
+                        {
+                            if (TxtCodCliente.Text == cliente || Driver.Cliente.ValidateByCodigo(sc.Cliente))
+                            {
+                                sc.Update(TxtCodPaq.Text);
+                                Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show(
+                                    "No existe el cliente " + sc.Cliente,
+                                    "Guía",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Stop
+                                );
+                                TxtCodCliente.Focus();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "No existe el empleado " + sc.Empleado,
+                                "Guía",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Stop
+                            );
+                            TxtCodEmpleado.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Ya existe una guía con código " + TxtCodPaq.Text,
+                            "Guía",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop
+                        );
+                        TxtCodPaq.Focus();
+                    }
+                    break;
             }
-            else
-            {
-                sc.Update(TxtCodPaq.Text);
-            }
-
-            Close();
         }
     }
 }

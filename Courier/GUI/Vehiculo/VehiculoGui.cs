@@ -119,7 +119,7 @@ namespace Courier.GUI.Vehiculo
                 : "¿Está seguro de eliminar " + (dgvr.Count == 1 ? "este vehículo?" : "{0} vehículos?");
 
             DialogResult dr = MessageBox.Show(
-                message,
+                String.Format(message, dgvr.Count),
                 "Vehículo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning

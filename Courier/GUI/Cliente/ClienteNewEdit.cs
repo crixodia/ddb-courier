@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Courier.GUI.Cliente
@@ -13,9 +6,13 @@ namespace Courier.GUI.Cliente
     public partial class ClienteNewEdit : Form
     {
         string codigo = "";
+        string cedula = "";
         public ClienteNewEdit(Driver.Cliente sc = null)
         {
             InitializeComponent();
+
+            CmbSuc.SelectedIndex = 0;
+
 
             if (sc == null)
             {
@@ -28,6 +25,7 @@ namespace Courier.GUI.Cliente
                 codigo = sc.Codigo;
                 TxtCodigo.Text = sc.Codigo;
                 TxtCedula.Text = sc.Cedula;
+                cedula = sc.Cedula;
                 TxtNombre.Text = sc.Nombre;
                 TxtProvincia.Text = sc.Provincia;
                 TxtCiudad.Text = sc.Ciudad;
@@ -53,23 +51,76 @@ namespace Courier.GUI.Cliente
                 TxtCedula.Text,
                 TxtProvincia.Text,
                 TxtCiudad.Text,
-                TxtProvincia.Text,
-                TxtCiudad.Text,
+                TxtDireccion.Text,
+                TxtTelefono.Text,
                 TxtZip.Text,
                 codigo
             );
 
-            if (codigo == "")
+            switch (codigo)
             {
-                sc.Codigo = TxtCodigo.Text;
-                sc.Insert();
+                case "":
+                    if (!Driver.Cliente.ValidateByCodigo(TxtCodigo.Text))
+                    {
+                        if (!Driver.Cliente.ValidateByCedula(sc.Cedula))
+                        {
+                            sc.Codigo = TxtCodigo.Text;
+                            sc.Insert();
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "Ya existe un cliente con cédula " + sc.Cedula,
+                                "Cliente",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Stop
+                            );
+                            TxtCedula.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Ya existe un cliente con código " + TxtCodigo.Text,
+                            "Cliente",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop
+                        );
+                        TxtCodigo.Focus();
+                    }
+                    break;
+                default:
+                    if (TxtCodigo.Text == sc.Codigo || !Driver.Cliente.ValidateByCodigo(TxtCodigo.Text))
+                    {
+                        if (TxtCedula.Text == cedula || !Driver.Cliente.ValidateByCedula(sc.Cedula))
+                        {
+                            sc.Update(TxtCodigo.Text);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "Ya existe un cliente con cédula " + sc.Cedula,
+                                "Cliente",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Stop
+                            );
+                            TxtCedula.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Ya existe un cliente con código " + TxtCodigo.Text,
+                            "Cliente",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop
+                        );
+                        TxtCodigo.Focus();
+                    }
+                    break;
             }
-            else
-            {
-                sc.Update(TxtCodigo.Text);
-            }
-
-            Close();
         }
     }
 }

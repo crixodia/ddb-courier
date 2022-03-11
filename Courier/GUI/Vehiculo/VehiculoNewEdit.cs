@@ -13,6 +13,7 @@ namespace Courier.GUI.Vehiculo
     public partial class VehiculoNewEdit : Form
     {
         int codigo = -1;
+        string placa = "";
         public VehiculoNewEdit(Driver.Vehiculo sc = null)
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace Courier.GUI.Vehiculo
                 TxtEmpleado.Text = sc.Empleado;
                 CmbSuc.SelectedIndex = sc.Sucursal - 1;
                 TxtPlaca.Text = sc.Placa;
+                placa = sc.Placa;
                 TxtModel.Text = sc.Modelo;
                 TxtYear.Text = sc.Anio;
                 TxtCap.Text = sc.Capacidad.ToString();
@@ -56,16 +58,82 @@ namespace Courier.GUI.Vehiculo
                 int.Parse(TxtId.Text)
             );
 
-            if (codigo == -1)
+            switch (codigo)
             {
-                sc.Insert();
+                case -1:
+                    if (!Driver.Vehiculo.ValidateByID(sc.Id))
+                    {
+                        if (!Driver.Vehiculo.ValidateByPlaca(sc.Placa))
+                        {
+                            if (Driver.Empleado.ValidateByCodigo(sc.Empleado))
+                            {
+                                sc.Insert();
+                                Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show(
+                                    "No existe el empleado " + sc.Empleado,
+                                    "Vehículo",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Stop
+                                );
+                                TxtEmpleado.Focus();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "Ya existe un vehículo con placa " + sc.Placa,
+                                "Vehículo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Stop
+                            );
+                            TxtPlaca.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Ya existe un vehículo con ID " + sc.Id,
+                            "Vehículo",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop
+                        );
+                        TxtId.Focus();
+                    }
+                    break;
+                default:
+                    if (TxtPlaca.Text == placa || !Driver.Vehiculo.ValidateByPlaca(sc.Placa))
+                    {
+                        if (Driver.Empleado.ValidateByCodigo(sc.Empleado))
+                        {
+                            sc.Update(codigo);
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "No existe el empleado " + sc.Empleado,
+                                "Vehículo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Stop
+                            );
+                            TxtEmpleado.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Ya existe un vehículo con placa " + sc.Placa,
+                            "Vehículo",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop
+                        );
+                        TxtPlaca.Focus();
+                    }
+                    break;
             }
-            else
-            {
-                sc.Update(codigo);
-            }
-
-            Close();
         }
     }
 }

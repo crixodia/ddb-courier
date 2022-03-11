@@ -153,5 +153,35 @@ namespace Courier.Driver
             return dt;
         }
 
+
+        public static bool ValidateByCodigo(string codigo)
+        {
+            DataTable dt = Connection.Query(string.Format("SELECT CODIGO_CLIENTE FROM CLIENTEV"));
+            Connection.Close();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[0].ToString() == codigo)
+                {
+                    Console.WriteLine(row[0].ToString());
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool ValidateByCedula(string cedula)
+        {
+            DataTable dt = Connection.Query(string.Format("SELECT CEDULA_CLIENTE FROM CLIENTEV"));
+            Connection.Close();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[0].ToString() == cedula)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }

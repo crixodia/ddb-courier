@@ -206,10 +206,10 @@ namespace Courier.GUI.Empleado
             this.CmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbRol.FormattingEnabled = true;
             this.CmbRol.Items.AddRange(new object[] {
-            "B",
-            "C",
-            "A",
-            "S"});
+            "Bodeguero",
+            "Chofer",
+            "Administrador",
+            "Soporte"});
             this.CmbRol.Location = new System.Drawing.Point(104, 258);
             this.CmbRol.Name = "CmbRol";
             this.CmbRol.Size = new System.Drawing.Size(177, 21);

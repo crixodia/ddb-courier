@@ -106,7 +106,7 @@ namespace Courier.GUI.Guia
                 : "¿Está seguro de eliminar " + (dgvr.Count == 1 ? "esta guía?" : "{0} guías?");
 
             DialogResult dr = MessageBox.Show(
-                message,
+                String.Format(message, dgvr.Count),
                 "Guía",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning

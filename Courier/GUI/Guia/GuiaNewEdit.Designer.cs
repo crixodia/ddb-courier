@@ -224,16 +224,16 @@ namespace Courier.GUI.Guia
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(10, 236);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 13);
+            this.label9.Size = new System.Drawing.Size(125, 13);
             this.label9.TabIndex = 38;
-            this.label9.Text = "Fecha Recepción";
+            this.label9.Text = "Fecha Recepción d/m/a";
             // 
             // TxtFecha
             // 
             this.TxtFecha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtFecha.Location = new System.Drawing.Point(107, 233);
+            this.TxtFecha.Location = new System.Drawing.Point(141, 233);
             this.TxtFecha.Name = "TxtFecha";
-            this.TxtFecha.Size = new System.Drawing.Size(176, 20);
+            this.TxtFecha.Size = new System.Drawing.Size(142, 20);
             this.TxtFecha.TabIndex = 7;
             // 
             // label10
@@ -254,9 +254,9 @@ namespace Courier.GUI.Guia
             this.CmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbEstado.FormattingEnabled = true;
             this.CmbEstado.Items.AddRange(new object[] {
-            "B",
-            "C",
-            "E"});
+            "Bodega",
+            "Camino",
+            "Entregado"});
             this.CmbEstado.Location = new System.Drawing.Point(107, 323);
             this.CmbEstado.Name = "CmbEstado";
             this.CmbEstado.Size = new System.Drawing.Size(176, 21);
@@ -267,16 +267,16 @@ namespace Courier.GUI.Guia
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(25, 353);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 13);
+            this.label11.Size = new System.Drawing.Size(110, 13);
             this.label11.TabIndex = 42;
-            this.label11.Text = "Fecha Entrega";
+            this.label11.Text = "Fecha Entrega d/m/a";
             // 
             // TxtFechaEntrega
             // 
             this.TxtFechaEntrega.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtFechaEntrega.Location = new System.Drawing.Point(107, 350);
+            this.TxtFechaEntrega.Location = new System.Drawing.Point(141, 350);
             this.TxtFechaEntrega.Name = "TxtFechaEntrega";
-            this.TxtFechaEntrega.Size = new System.Drawing.Size(176, 20);
+            this.TxtFechaEntrega.Size = new System.Drawing.Size(142, 20);
             this.TxtFechaEntrega.TabIndex = 10;
             // 
             // GuiaNewEdit

@@ -87,7 +87,7 @@ namespace Courier.GUI.Cliente
                 : "¿Está seguro de eliminar " + (dgvr.Count == 1 ? "este cliente?" : "{0} clientes?");
 
             DialogResult dr = MessageBox.Show(
-                message,
+                String.Format(message, dgvr.Count),
                 "Cliente",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning

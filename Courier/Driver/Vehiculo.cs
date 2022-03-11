@@ -185,5 +185,33 @@ namespace Courier.Driver
             Connection.Close();
             return dt;
         }
+
+        public static bool ValidateByID(int ID)
+        {
+            DataTable dt = Connection.Query(string.Format("SELECT ID_VEHICULO FROM VEHICULO"));
+            Connection.Close();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (int.Parse(row[0].ToString()) == ID)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool ValidateByPlaca(string placa)
+        {
+            DataTable dt = Connection.Query(string.Format("SELECT PLACA FROM VEHICULO"));
+            Connection.Close();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[0].ToString() == placa)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
