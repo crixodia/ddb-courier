@@ -80,6 +80,7 @@ namespace Courier.GUI.Vehiculo
             // 
             // TsbNew
             // 
+            this.TsbNew.Enabled = false;
             this.TsbNew.Image = global::Courier.Properties.Resources.new16;
             this.TsbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TsbNew.Name = "TsbNew";
@@ -89,6 +90,7 @@ namespace Courier.GUI.Vehiculo
             // 
             // TsbEdit
             // 
+            this.TsbEdit.Enabled = false;
             this.TsbEdit.Image = global::Courier.Properties.Resources.edit16;
             this.TsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TsbEdit.Name = "TsbEdit";
@@ -98,6 +100,7 @@ namespace Courier.GUI.Vehiculo
             // 
             // TsbDelete
             // 
+            this.TsbDelete.Enabled = false;
             this.TsbDelete.Image = global::Courier.Properties.Resources.delete16;
             this.TsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TsbDelete.Name = "TsbDelete";

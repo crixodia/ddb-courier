@@ -41,7 +41,7 @@ namespace Courier.GUI.Guia
 
         private void TsbNew_Click(object sender, EventArgs e)
         {
-            var sne = new GuiaNewEdit(true)
+            var sne = new GuiaNewEdit(false)
             {
                 Text = "Nueva guía"
             };
@@ -59,7 +59,7 @@ namespace Courier.GUI.Guia
                 if (dgvr.Count == 1)
                 {
                     DataGridViewCellCollection row = dgvr[0].Cells;
-                    var sne = new GuiaNewEdit(true,
+                    var sne = new GuiaNewEdit(false,
                         new Driver.Guia(
                             int.Parse(row[1].Value.ToString()),
                             row[2].Value.ToString(),

@@ -152,7 +152,7 @@ namespace Courier.GUI.Vehiculo
 
         private void Dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            TsbEdit_Click(sender, e);
+            //TsbEdit_Click(sender, e);
         }
 
         private void TscOk_Click(object sender, EventArgs e)

@@ -111,7 +111,7 @@ namespace Courier.GUI.Sucursal
 
         private void Dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            TsbEdit_Click(sender, e);
+            //TsbEdit_Click(sender, e);
         }
     }
 }
