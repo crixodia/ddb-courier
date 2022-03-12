@@ -70,6 +70,7 @@ namespace Courier.GUI.Sucursal
             // 
             // tsbEdit
             // 
+            this.tsbEdit.Enabled = false;
             this.tsbEdit.Image = global::Courier.Properties.Resources.edit16;
             this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEdit.Name = "tsbEdit";
